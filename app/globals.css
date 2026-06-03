@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #fffafa;
+  color: #171214;
+}
+
+.dark body {
+  background: #110d0f;
+  color: #fff7f6;
+}
+
+::selection {
+  background: rgba(240, 75, 69, 0.2);
+}
+
+.glass-panel {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 247, 245, 0.72));
+  border: 1px solid rgba(234, 219, 221, 0.82);
+  box-shadow: 0 24px 80px rgba(217, 38, 46, 0.14);
+  backdrop-filter: blur(18px);
+}
+
+.dark .glass-panel {
+  background: linear-gradient(145deg, rgba(42, 31, 34, 0.9), rgba(20, 15, 17, 0.88));
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
