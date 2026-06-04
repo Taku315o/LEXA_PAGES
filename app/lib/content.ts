@@ -6,7 +6,7 @@ export function isLocale(value: string): value is Locale {
 }
 
 export const site = {
-  domain: "https://lexa-learn.com",
+  domain: process.env.NEXT_PUBLIC_SITE_URL || "https://lexa-learn.com",
   supportEmail: "support@lexa-learn.com",
   appStoreUrl: process.env.NEXT_PUBLIC_APP_STORE_URL || "#"
 };
@@ -14,7 +14,7 @@ export const site = {
 export const content = {
   ja: {
     meta: {
-      title: "衝動を復習に変える",
+      title: "スクロールを英語学習に変えるアプリ",
       description:
         "LEXAは、スマホを開きたい衝動を英語学習の復習機会に変えるiPhone専用アプリです。"
     },
@@ -30,7 +30,7 @@ export const content = {
       dark: "Dark"
     },
     hero: {
-      title: "衝動を復習に変える",
+      title: "スクロールを英語学習に変えるアプリ",
       body:
         "アプリを開きたくなった瞬間を、英単語の復習タイミングに。LEXAはスクリーンタイムのブロックとFSRSを組み合わせた、iPhone専用の英語学習アプリです。",
       primary: "App Storeで見る",

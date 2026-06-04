@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Locale } from "../lib/content";
 import { content, site } from "../lib/content";
 
@@ -10,7 +11,7 @@ export function Footer({ locale }: { locale: Locale }) {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <img src="/assets/lexa-logo.png" alt="" className="h-9 w-9 rounded-xl" />
+            <Image src="/assets/lexa-logo.png" alt="" width={36} height={36} className="h-9 w-9 rounded-xl" />
             <span className="font-black text-lexa-ink dark:text-white">LEXA</span>
           </div>
           <p className="mt-3 text-sm text-lexa-muted dark:text-white/58">

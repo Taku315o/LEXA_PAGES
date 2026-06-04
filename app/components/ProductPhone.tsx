@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Locale } from "../lib/content";
 
 /**
@@ -18,18 +19,24 @@ export function ProductPhone({ locale }: { locale: Locale }) {
         {/* Screen — clip inner content */}
         <div className="overflow-hidden rounded-[46px]">
           {/* Light mode screenshot */}
-          <img
+          <Image
             src={`/assets/${baseName}_light.png`}
             alt="LEXA app screenshot"
+            width={780}
+            height={1688}
             className="block w-full select-none dark:hidden"
             draggable={false}
+            priority
           />
           {/* Dark mode screenshot */}
-          <img
+          <Image
             src={`/assets/${baseName}_dark.png`}
             alt="LEXA app screenshot"
+            width={780}
+            height={1688}
             className="hidden w-full select-none dark:block"
             draggable={false}
+            priority
           />
         </div>
       </div>

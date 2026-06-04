@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { notFound } from "next/navigation";
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
-import { isLocale, locales, type Locale } from "../lib/content";
 import "../globals.css";
 
 const analyticsToken = process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://lexa-learn.com"),
-  title: {
-    default: "LEXA",
-    template: "%s | LEXA"
-  },
+  title: "LEXA",
   description: "LEXA turns the impulse to open your phone into English review.",
   icons: {
     icon: "/assets/lexa-logo.png",
@@ -35,34 +28,14 @@ const themeBootScript = `
 })();
 `;
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-export const dynamicParams = false;
-
-export default async function LocaleLayout({
-  children,
-  params
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale: rawLocale } = await params;
-  if (!isLocale(rawLocale)) {
-    notFound();
-  }
-  const locale = rawLocale as Locale;
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>
       <body className="font-sans antialiased">
-        <Header locale={locale} />
         {children}
-        <Footer locale={locale} />
         {analyticsToken ? (
           <Script
             defer
