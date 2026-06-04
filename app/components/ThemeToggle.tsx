@@ -54,7 +54,7 @@ export function ThemeToggle({ labels }: { labels: { light: string; dark: string 
     return (
       <button
         type="button"
-        className="flex h-10 items-center gap-0.5 rounded-full border border-lexa-line bg-white/80 p-1 text-xs font-bold shadow-sm transition dark:border-white/12 dark:bg-white/8"
+        className="flex h-10 items-center gap-0.5 rounded-full border border-lexa-line bg-white/80 p-1 text-xs font-bold shadow-sm transition dark:border-[#3a2326] dark:bg-[#1a1517]/95 dark:shadow-[0_10px_30px_rgba(0,0,0,0.22)]"
         aria-label="Toggle light/dark theme"
       >
         <span className="rounded-full px-3 py-1.5 opacity-0">{labels.light}</span>
@@ -67,14 +67,14 @@ export function ThemeToggle({ labels }: { labels: { light: string; dark: string 
     <button
       type="button"
       onClick={handleToggle}
-      className="flex h-10 items-center gap-0.5 rounded-full border border-lexa-line bg-white/80 p-1 text-xs font-bold shadow-sm transition dark:border-white/12 dark:bg-white/8"
+      className="flex h-10 items-center gap-0.5 rounded-full border border-lexa-line bg-white/80 p-1 text-xs font-bold shadow-sm transition dark:border-[#3a2326] dark:bg-[#1a1517]/95 dark:shadow-[0_10px_30px_rgba(0,0,0,0.22)]"
       aria-label="Toggle light/dark theme"
     >
       <span
         className={`rounded-full px-3 py-1.5 transition-all duration-200 ${
           theme === "light"
-            ? "bg-lexa-ink text-white"
-            : "text-lexa-muted hover:text-white"
+            ? "bg-lexa-ink text-white dark:bg-[#2b2023] dark:text-white"
+            : "text-lexa-muted hover:text-white dark:text-white/58 dark:hover:text-white"
         }`}
       >
         {labels.light}
@@ -82,8 +82,8 @@ export function ThemeToggle({ labels }: { labels: { light: string; dark: string 
       <span
         className={`rounded-full px-3 py-1.5 transition-all duration-200 ${
           theme === "dark"
-            ? "bg-white text-lexa-ink"
-            : "text-lexa-muted hover:text-lexa-ink"
+            ? "bg-white text-lexa-ink shadow-[0_1px_0_rgba(255,255,255,0.08),0_8px_20px_rgba(0,0,0,0.22)] dark:bg-[#f7f1ef] dark:text-[#171214]"
+            : "text-lexa-muted hover:text-lexa-ink dark:text-white/58 dark:hover:text-white"
         }`}
       >
         {labels.dark}

@@ -50,7 +50,7 @@ export function LandingPage({ locale }: { locale: Locale }) {
               </a>
               <Link
                 href={`/${locale}/#flow`}
-                className="inline-flex items-center justify-center rounded-full border-2 border-lexa-line bg-white/80 px-8 py-4 text-base font-black text-lexa-ink transition hover:border-lexa-coral dark:border-white/12 dark:bg-white/8 dark:text-white dark:hover:border-white/30"
+                className="inline-flex items-center justify-center rounded-full border-2 border-lexa-line bg-white/80 px-8 py-4 text-base font-black text-lexa-ink transition hover:border-lexa-coral dark:border-[#4a2328] dark:bg-[#161113]/92 dark:text-white dark:shadow-[0_12px_30px_rgba(0,0,0,0.25)] dark:hover:border-[#c94a48] dark:hover:bg-[#1d1417]"
               >
                 {t.hero.secondary}
               </Link>
