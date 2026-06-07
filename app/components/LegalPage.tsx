@@ -48,7 +48,9 @@ export function LegalPage({
         {intro && (
           <div className="mt-8 space-y-4 text-base font-medium leading-8 text-lexa-muted dark:text-white/64">
             {intro.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <p key={paragraph} className="whitespace-pre-wrap">
+                {paragraph}
+              </p>
             ))}
           </div>
         )}
@@ -60,7 +62,9 @@ export function LegalPage({
               </h2>
               <div className="mt-4 space-y-4 text-base font-medium leading-8 text-lexa-muted dark:text-white/64">
                 {section.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph} className="whitespace-pre-wrap">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
             </section>
