@@ -5,8 +5,12 @@ export function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
 }
 
+function normalizeDomain(value: string) {
+  return value.replace(/\/+$/, "");
+}
+
 export const site = {
-  domain: process.env.NEXT_PUBLIC_SITE_URL || "https://lexa-learn.com",
+  domain: normalizeDomain(process.env.NEXT_PUBLIC_SITE_URL || "https://lexa-learn.com"),
   supportEmail: "support@lexa-learn.com",
   appStoreUrl: process.env.NEXT_PUBLIC_APP_STORE_URL || "#",
 };
@@ -104,7 +108,7 @@ export const content = {
       privacyTitle: "プライバシーポリシー",
       termsTitle: "利用規約",
       supportTitle: "問い合わせ・サポート",
-      updated: "最終更新日: 2026年6月3日",
+      updated: "最終更新日: 2026年6月8日",
     },
   },
   en: {

@@ -26,7 +26,6 @@ export function ProductPhone({ locale }: { locale: Locale }) {
             height={1688}
             className="block w-full select-none dark:hidden"
             draggable={false}
-            priority
           />
           {/* Dark mode screenshot */}
           <Image
@@ -36,7 +35,6 @@ export function ProductPhone({ locale }: { locale: Locale }) {
             height={1688}
             className="hidden w-full select-none dark:block"
             draggable={false}
-            priority
           />
         </div>
       </div>
