@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LegalPage } from "../../components/LegalPage";
 import { content, isLocale, site, type Locale } from "../../lib/content";
-import { termsSections } from "../../lib/legal";
+import { termsSections, termsIntro } from "../../lib/legal";
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
@@ -18,14 +18,14 @@ export async function generateMetadata({
       canonical: `${site.domain}/${locale}/terms/`,
       languages: {
         ja: `${site.domain}/ja/terms/`,
-        en: `${site.domain}/en/terms/`
-      }
-    }
+        en: `${site.domain}/en/terms/`,
+      },
+    },
   };
 }
 
 export default async function TermsPage({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -39,6 +39,7 @@ export default async function TermsPage({
       locale={locale}
       title={content[locale].legal.termsTitle}
       sections={termsSections(locale)}
+      intro={termsIntro(locale)}
     />
   );
 }

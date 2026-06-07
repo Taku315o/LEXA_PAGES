@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LegalPage } from "../../components/LegalPage";
 import { content, isLocale, site, type Locale } from "../../lib/content";
-import { privacySections } from "../../lib/legal";
+import { privacySections, privacyIntro } from "../../lib/legal";
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
@@ -18,14 +18,14 @@ export async function generateMetadata({
       canonical: `${site.domain}/${locale}/privacy/`,
       languages: {
         ja: `${site.domain}/ja/privacy/`,
-        en: `${site.domain}/en/privacy/`
-      }
-    }
+        en: `${site.domain}/en/privacy/`,
+      },
+    },
   };
 }
 
 export default async function PrivacyPage({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -39,6 +39,7 @@ export default async function PrivacyPage({
       locale={locale}
       title={content[locale].legal.privacyTitle}
       sections={privacySections(locale)}
+      intro={privacyIntro(locale)}
     />
   );
 }
