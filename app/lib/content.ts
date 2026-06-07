@@ -109,9 +109,9 @@ export const content = {
   },
   en: {
     meta: {
-      title: "Turn impulses into review",
+      title: "Turn scrolling into learning",
       description:
-        "LEXA is an iPhone app that turns the impulse to open distracting apps into English review.",
+        "LEXA is an iPhone-exclusive app that turns the impulse to open your phone into language review opportunities.",
     },
     nav: {
       features: "Features",
@@ -125,71 +125,74 @@ export const content = {
       dark: "Dark",
     },
     hero: {
-      title: "Turn impulses into review",
-      body: "When you reach for a blocked app, LEXA turns that moment into English vocabulary review. It combines Screen Time blocking with FSRS spaced repetition for iPhone.",
+      title: "Turn scrolling into learning",
+      body: "That moment when you reach for an app is your best time to review. LEXA is a new kind of Japanese learning app that combines an app blocker with an advanced memory algorithm.",
       primary: "View on App Store",
       secondary: "See how it works",
-      note: "Built for English learners. Learning data is designed to stay local-first.",
+      note: "No tedious registration. All learning data is safely stored only on your device.",
     },
     phone: {
       due: "Review now",
-      detail: "Words that are ready to stick",
+      detail: "Words ready to stick in your memory",
       start: "Start now",
       unlock: "Temporarily unlocked",
-      unlockDetail: "Apps are blocked again after your usage allowance",
+      unlockDetail: "Automatically blocks again after a set time",
       streak: "2-day streak",
       streakDetail: "Complete an unlock session today to keep it",
-      record: "Today",
+      record: "Today's record",
       unlocks: "Unlocks",
       manual: "Manual study",
     },
     flow: {
-      title: "Make the urge to open an app useful",
-      body: "LEXA is not just an app blocker. It turns the frequency of your impulses into the frequency of your review.",
+      title: "Turn 'just checking' into learning time",
+      body: "LEXA is more than just an app blocker. It's a new system that uses your unconscious urge to open social media to build a learning habit.",
       items: [
         [
           "01",
-          "Open a blocked app",
-          "LEXA shows a shield for the apps, categories, or domains you selected.",
+          "Open your usual apps",
+          "When you try to open blocked apps like social media, LEXA's shield steps in to pause you.",
         ],
         [
           "02",
-          "Review in LEXA",
-          "Answer vocabulary cards and update the next review timing with FSRS.",
+          "Quick review",
+          "Take a quick English vocabulary quiz to unlock the app. Review words you're about to forget at the perfect time.",
         ],
         [
           "03",
-          "Get temporary access",
-          "After the required review, your selected apps unlock for a usage allowance, then block again.",
+          "Enjoy guilt-free",
+          "Clear the quiz for 15 minutes of free access. Enjoy your app guilt-free knowing you've done your learning.",
         ],
       ],
     },
     features: {
-      title: "A blocker and a learning app in one",
+      title: "App blocker and learning app, all in one",
       items: [
         [
-          "FSRS",
-          "Spaced repetition prioritizes cards that are likely to need review.",
+          "Advanced memory algorithm",
+          "Based on the forgetting curve, it prioritizes the words you are most likely to forget.",
         ],
         [
-          "Manual Study",
-          "Clear due cards even on days when you do not open blocked apps.",
+          "Self-study in spare time",
+          "Study at your own pace like a normal flashcard app, even on days you don't open social media.",
         ],
-        ["Streak", "Track completed unlock sessions as a habit."],
         [
-          "Local-first",
-          "Learning data and settings are designed to stay on device. No account required to start.",
+          "Streaks to keep you going",
+          "Visualize your daily achievements. The urge to open apps turns directly into motivation to continue.",
+        ],
+        [
+          "No account required",
+          "All data is saved on your device. Start immediately with no tedious registration process.",
         ],
       ],
     },
     privacyBand: {
-      title: "Screen Time is used for blocking",
-      body: "LEXA uses selected apps, categories, and web domains to control blocking. Learning data is designed to be stored local-first, and FSRS scheduling runs on device.",
-      cta: "Privacy Policy",
+      title: "Your data stays on your phone",
+      body: "Apple's Screen Time feature is used strictly for blocking apps. We never monitor your browsing history. All learning data is stored locally on your device and never sent externally.",
+      cta: "Read Privacy Policy",
     },
     finalCta: {
       title: "Make your next impulse a review session.",
-      body: "LEXA is being built as an iPhone app.",
+      body: "LEXA is currently in development exclusively for iPhone.",
       cta: "View on App Store",
     },
     legal: {
