@@ -16,8 +16,9 @@ export function privacyIntro(locale: Locale) {
     lastUpdated: "Last updated: June 8, 2026",
     version: "Version: 1.0",
     body: [
-      'LEXA (the "App") is a learning and app-blocking companion app for iPhone designed to help you review English before opening selected apps.',
-      "This Privacy Policy explains how we handle your information when you use the App.",
+      'LEXA ("the App") is an iPhone app that helps users review English before opening selected apps or websites. The App provides learning and app-blocking support features.',
+      "This Privacy Policy explains how user information is handled in the App.",
+      "Operator: LEXA Operator\nContact: support@lexa-learn.com",
     ],
   };
 }
@@ -178,36 +179,152 @@ export function privacySections(locale: Locale) {
 
   return [
     {
-      title: "Information We Handle",
+      title: "1. Basic Policy",
       body: [
-        "LEXA handles information needed to provide the app, including learning cards, review history, learning settings, blocking settings, and unlock session state.",
-        "Apps, categories, and web domains selected through Screen Time / Family Controls are used to control blocking and temporary unlocks.",
+        "The App respects user privacy and does not collect information beyond what is necessary to provide its features.",
+        "Core data such as learning data, review history, card information, blocking settings, and unlock history is generally stored on the user’s device.",
+        "The App does not sell users’ personal information, learning data, or blocking target information to third parties. The App also does not use such information for advertising, ad tracking, or provision to data brokers.",
       ],
     },
     {
-      title: "How We Use Information",
+      title: "2. Information We Collect and Use",
       body: [
-        "Information is used for vocabulary review, FSRS scheduling, blocking control, temporary unlocks, learning status display, and support.",
-        "LEXA does not use your selected blocking targets for advertising sales or sale to third parties.",
+        "The App may store and process the following information on the user’s device in order to provide its features:\n\n- App settings\n- Display language and learning language settings\n- Information about apps, categories, and web domains selected as blocking targets\n- Temporary unlock status\n- Learning cards, user-created cards, and card display settings\n- Review history, review status, and learning progress\n- Unlock session history\n- Learning continuity information such as streaks\n- Information necessary to confirm access to paid features",
+        "This information is used for English learning, review scheduling, app blocking, unlock sessions, re-blocking, learning progress display, settings management, and paid feature access.",
       ],
     },
     {
-      title: "Local-first Storage",
+      title: "3. Information Sharing Between the Main App and Extensions",
       body: [
-        "LEXA is designed to store learning data and settings primarily on device. FSRS scheduling is designed to run on device.",
-        "If account or sync features are added in the future, this policy will be updated to explain what information is handled and why.",
+        "The App shares the minimum information necessary between the main app and related extensions in order to use Apple’s Screen Time-related features.",
+        "The shared information may include selected blocking targets, unlock status, state information necessary for usage monitoring, and information necessary for error recovery.",
+        "This information is stored in the iOS App Group shared container and is used by the main App and its related extensions.",
       ],
     },
     {
-      title: "Analytics",
+      title: "4. Use of Screen Time / Family Controls",
       body: [
-        "This website may use Cloudflare Web Analytics to understand site traffic and improve pages.",
-        "The website analytics do not collect in-app learning content or Screen Time selections.",
+        "The App uses Apple-provided features such as Screen Time, Family Controls, Managed Settings, and Device Activity based on the user’s permission.",
+        "These features allow the App to apply restrictions to apps, categories, and web domains selected by the user, temporarily unlock them after learning is completed, and apply restrictions again after a certain amount of use.",
+        "The App is not intended to collect the user’s entire Screen Time history. It is also not intended to collect a full list of all apps installed on the device. The App uses only the targets explicitly selected by the user for the purpose of providing the blocking feature.",
       ],
     },
     {
-      title: "Contact",
-      body: [`For privacy questions, contact ${site.supportEmail}.`],
+      title: "5. Background Processing Through DeviceActivity",
+      body: [
+        "The App may perform background processing initiated by iOS in order to monitor usage after unlocking and to re-apply blocking.",
+        "This processing is used to re-apply restrictions when the user reaches the usage allowance they configured. It is not intended to collect or analyze detailed Screen Time history.",
+      ],
+    },
+    {
+      title: "6. Purchase and Subscription Information",
+      body: [
+        "The App may offer paid features, subscriptions, one-time purchase plans, or other paid plans.",
+        "Payments are processed through Apple’s in-app purchase system on the App Store. The App also uses RevenueCat, Inc. as a purchase management service to confirm purchase status, restore purchases, manage access to paid features, and prevent fraudulent use.",
+        "The App operator does not directly collect users’ credit card numbers, bank account information, Apple ID passwords, or other payment credentials.",
+        "The App or RevenueCat may process information necessary to provide paid features, including anonymous user IDs, purchase history, product IDs, subscription status, information required for purchase restoration, app version, and device or operating system information.",
+        "This information is used to confirm access to paid features, check subscription status, restore purchases, prevent fraudulent use, and investigate purchase-related issues.",
+      ],
+    },
+    {
+      title: "7. Information Collected When You Contact Us",
+      body: [
+        "If a user contacts us by email or another method, we may collect the following information:\n\n- Email address\n- Inquiry content\n- Screenshots, logs, device information, or other information voluntarily provided by the user\n- App version, OS version, and other information necessary to investigate issues",
+        "This information is used for responding to inquiries, investigating bugs, and improving quality.",
+        "Inquiry information is generally stored for three years after the response is completed, and is then deleted or anonymized. However, we may retain it for a longer period if necessary for legal compliance, dispute resolution, fraud prevention, or similar purposes.",
+      ],
+    },
+    {
+      title: "8. Information During TestFlight Use",
+      body: [
+        "If the App is used through TestFlight, Apple may collect and process crash logs, device information, and usage-related information.",
+        "This information is used for beta testing, bug fixing, and quality improvement.",
+      ],
+    },
+    {
+      title: "9. Information the App Does Not Collect",
+      body: [
+        "In normal use, the App does not currently collect the following information:\n\n- Name\n- Address\n- Phone number\n- Contact list\n- Photo library\n- Camera images\n- Audio data\n- Precise location information\n- Health information\n- Biometric information\n- Face data\n- Fingerprint information\n- A full list of all apps installed on the device\n- Browsing history outside the App\n- Tracking information using advertising identifiers",
+        "However, if a user voluntarily sends any of this information when contacting us, it may be temporarily processed for the purpose of responding to that inquiry.",
+      ],
+    },
+    {
+      title: "10. External Transmission and Third-Party Services",
+      body: [
+        "The App does not currently use third-party advertising networks, ad tracking SDKs, or analytics SDKs for advertising purposes.",
+        "Information may be sent to the following external services in connection with providing the App:\n\n[Apple Inc.]\nInformation That May Be Sent: Purchase information, purchase status, crash logs, diagnostic information, App Store usage information, device and OS information\nPurpose: App distribution, in-app purchases, purchase restoration, quality improvement, beta testing\n\n[Apple iCloud]\nInformation That May Be Sent: Part of the App data stored on the device\nPurpose: Backup and restoration when the user has enabled iCloud Backup\n\n[RevenueCat, Inc.]\nInformation That May Be Sent: Anonymous user ID, purchase history, product IDs, subscription status, information required for purchase restoration, app version, device and OS information\nPurpose: Purchase status confirmation, purchase restoration, paid feature management, fraud prevention, investigation of purchase-related issues\n\n[Email service provider]\nInformation That May Be Sent: Email address, inquiry content, attachments, sending date and time\nPurpose: User support, inquiry handling, bug investigation",
+        "If we introduce analytics SDKs, cloud sync, advertising services, or other external services in the future, we will update this Privacy Policy and specify the recipient, information transmitted, and purpose of use.",
+      ],
+    },
+    {
+      title: "11. iCloud Backup",
+      body: [
+        "The App’s data is generally stored on the user’s device.",
+        "However, if the user has enabled iCloud Backup, some App data stored on the device may be included in Apple’s iCloud Backup.",
+        "The management, storage, restoration, and deletion of iCloud Backup data are subject to Apple’s services and the user’s Apple ID settings.",
+      ],
+    },
+    {
+      title: "12. Disclosure to Third Parties",
+      body: [
+        "The App does not provide users’ personal information to third parties except in the following cases:\n\n- When the user has given consent\n- When external services are used within the scope necessary to provide App features, handle inquiries, process purchases, or investigate issues\n- When required by law\n- When a lawful disclosure request is made by a court, administrative agency, police, or other public authority\n- When necessary to protect the rights, property, or safety of the App, users, or third parties",
+        "The App does not sell user information to third parties.",
+      ],
+    },
+    {
+      title: "13. Data Retention and Deletion",
+      body: [
+        "Learning data, review history, card information, settings, blocking settings, unlock history, and other data stored on the device are retained until the user deletes or resets them in the App, or uninstalls the App.",
+        "However, due to the specifications of iOS, the App Group shared container, or iCloud Backup, some data may remain on the device or in iCloud Backup even after the App is uninstalled.",
+        "If the App provides a reset feature, users can delete learning data, settings, history, and related information from within the App.",
+        "If you wish to delete information processed outside the device, such as inquiry information or purchase-related information, please contact us using the contact information at the end of this Policy. However, certain information may need to be retained for legal, accounting, tax, fraud prevention, dispute resolution, or similar purposes.",
+      ],
+    },
+    {
+      title: "14. Security",
+      body: [
+        "The App takes reasonable security measures to prevent leakage, loss, alteration, unauthorized access, and other risks related to user information.",
+        "The App’s core data is stored in the iOS app container or in a dedicated shared area used by the App and its related extensions.",
+        "However, no method of storage, communication, or electronic processing can be guaranteed to be 100% secure. Users should also take care to manage their own devices, including using device lock features, keeping the OS updated, and avoiding suspicious apps.",
+      ],
+    },
+    {
+      title: "15. Use by Minors",
+      body: [
+        "The App is not primarily directed at children under the age of 13 in Japan.",
+        "If a person under the age of 13 uses the App, they should do so with the consent and supervision of a parent or legal guardian.",
+        "If different standards apply to the handling of minors’ personal information in the European Economic Area, the United Kingdom, the United States, or other regions, applicable laws will be followed.",
+        "If the Operator becomes aware that personal information has been collected from a minor in violation of applicable law, the Operator will take reasonable steps to delete or otherwise address such information promptly.",
+      ],
+    },
+    {
+      title: "16. User Rights",
+      body: [
+        "Users may have the right, within the scope of applicable law, to request access, correction, suspension of use, deletion, or other handling of personal information held by the Operator.",
+        "However, the App’s core learning data and settings are stored on the user’s device, and the Operator may not hold such data on its servers. In such cases, the Operator cannot directly access the data stored on the device.",
+        "Data stored on the device should be deleted through the App’s delete or reset functions, or by uninstalling the App.",
+        "Purchase-related information may be processed through Apple and RevenueCat. If you wish to confirm or request deletion of such information, please contact us using the contact information at the end of this Policy. However, some information may need to be retained for a certain period for purchase history, accounting, tax, fraud prevention, dispute resolution, or similar purposes.",
+        "Users in the European Economic Area or other regions with applicable data protection laws may also have rights to data portability, restriction of processing, objection to processing, and lodging a complaint with a supervisory authority, where such rights apply.",
+      ],
+    },
+    {
+      title: "17. Changes to This Privacy Policy",
+      body: [
+        "The App may update this Privacy Policy as necessary.",
+        "Minor changes, typo corrections, and clarifications will become effective when posted on this page.",
+        "If there are material changes to user rights, purposes of data use, external recipients, third-party disclosure, retention periods, or similar matters, we will notify users through the App, website, App Store description, or another appropriate method.",
+      ],
+    },
+    {
+      title: "18. Revision History",
+      body: ["June 8, 2026 — Version 1.0 created."],
+    },
+    {
+      title: "19. Contact",
+      body: [
+        "For questions about this Privacy Policy, the handling of user information, data deletion, access requests, or other privacy-related matters, please contact:\n\nOperator: Takuto Hizawa",
+        `Email: ${site.supportEmail}`,
+      ],
     },
   ];
 }
