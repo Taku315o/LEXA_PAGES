@@ -159,7 +159,7 @@ export const content = {
         [
           "02",
           "Quick review",
-          "Take a quick English vocabulary quiz to unlock the app. Review words you're about to forget at the perfect time.",
+          "Take a quick Japanese vocabulary quiz to unlock the app. Review words you're about to forget at the perfect time.",
         ],
         [
           "03",
