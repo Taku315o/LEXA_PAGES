@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://lexa-learn.com"),
   title: "LEXA",
   description: "LEXA turns the impulse to open your phone into English review.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "x-default": "/",
+      ja: "/ja/",
+      en: "/en/",
+    },
+  },
   icons: {
     icon: "/assets/lexa-logo.png",
     apple: "/assets/lexa-logo.png"
