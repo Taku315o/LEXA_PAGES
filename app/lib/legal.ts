@@ -3,8 +3,8 @@ import { site, type Locale } from "./content";
 export function privacyIntro(locale: Locale) {
   if (locale === "ja") {
     return {
-      lastUpdated: "最終更新日：2026年6月8日",
-      version: "バージョン：1.0",
+      lastUpdated: "最終更新日：2026年7月29日",
+      version: "バージョン：1.1",
       body: [
         "LEXA（以下「本アプリ」といいます）は、スマートフォンを開く前に英語の復習を行う、iPhone向けの学習・アプリブロック支援アプリです。",
         "本プライバシーポリシー（以下「本ポリシー」といいます）は、本アプリにおけるユーザー情報の取扱いについて説明するものです。",
@@ -13,8 +13,8 @@ export function privacyIntro(locale: Locale) {
   }
 
   return {
-    lastUpdated: "Last updated: June 8, 2026",
-    version: "Version: 1.0",
+    lastUpdated: "Last updated: July 29, 2026",
+    version: "Version: 1.1",
     body: [
       'LEXA ("the App") is an iPhone app that helps users review English before opening selected apps or websites. The App provides learning and app-blocking support features.',
       "This Privacy Policy explains how user information is handled in the App.",
@@ -39,6 +39,7 @@ export function privacySections(locale: Locale) {
         body: [
           "本アプリは、機能提供のために以下の情報を端末内に保存・処理する場合があります。\n\n・アプリ設定\n・表示言語、学習言語の設定\n・ブロック対象として選択されたアプリ、カテゴリ、Webドメインに関する情報\n・一時解除の状態\n・学習カード、ユーザー作成カード、カードの出題設定\n・復習履歴、復習状態、学習進捗\n・解除セッションの履歴\n・Streakなどの学習継続情報\n・有料機能の利用可否を確認するために必要な課金状態に関する情報",
           "これらの情報は、英語学習、復習スケジュールの管理、アプリブロック、解除セッション、再ブロック、学習進捗の表示、設定管理、有料機能の提供のために利用されます。",
+          "本アプリは、端末ごとに生成する仮名のローカルユーザーIDを、利用状況の計測、クラッシュ診断、課金状態の確認で利用する場合があります。このIDはアカウントIDではなく、ローカルデータのリセットまたはアプリの再インストールにより新しいIDになります。",
         ],
       },
       {
@@ -99,9 +100,9 @@ export function privacySections(locale: Locale) {
       {
         title: "10. 外部送信・第三者サービス",
         body: [
-          "本アプリは、現在、第三者広告ネットワーク、広告トラッキングSDK、広告目的の分析SDKを使用していません。",
-          "本アプリの提供に関連して、以下の外部サービスに情報が送信される場合があります。\n\n【Apple Inc.】\n送信される可能性のある情報：購入情報、課金状態、クラッシュログ、診断情報、App Store上の利用状況、端末・OSに関する情報\n利用目的：アプリ配布、アプリ内課金、購入復元、品質改善、ベータテスト\n\n【Apple iCloud】\n送信される可能性のある情報：端末内に保存された本アプリのデータの一部\n利用目的：ユーザーがiCloudバックアップを有効にしている場合のバックアップ・復元\n\n【RevenueCat, Inc.】\n送信される可能性のある情報：匿名ユーザーID、購入履歴、商品ID、サブスクリプション状態、購入復元に必要な情報、アプリバージョン、端末・OSに関する情報\n利用目的：課金状態の確認、購入復元、有料機能の管理、不正利用防止、課金関連の不具合調査\n\n【メールサービス提供者】\n送信される可能性のある情報：メールアドレス、問い合わせ本文、添付ファイル、送信日時等\n利用目的：問い合わせ対応、サポート、不具合調査",
-          "将来、分析SDK、クラウド同期、広告サービス、その他の外部サービス等を導入する場合は、本プライバシーポリシーを更新し、送信先、送信情報、利用目的を明示します。",
+          "本アプリは、第三者広告ネットワーク、広告識別子を用いたトラッキング、または他社アプリやWebサイトをまたぐ広告目的の追跡を行いません。",
+          "本アプリの提供に関連して、以下の外部サービスに最小限の情報が送信される場合があります。\n\n【PostHog（EUリージョン）】\n送信される情報：端末ごとの仮名ローカルユーザーID、明示的な利用イベント、アプリバージョン、言語、機能状態などの最小限の技術情報\n送信しない情報：学習カードや回答の内容、Screen Timeの選択内容やトークン、正確な学習成績、正確なブロック対象数、位置情報\n利用目的：利用状況の集計と機能改善\n保存期間：原則1年\n\n【Firebase Crashlytics】\n送信される情報：クラッシュ情報、限定された診断コード、アプリ・OS・端末に関する技術情報、および仮名ローカルユーザーID\n利用目的：不具合の調査と品質改善\n保存期間：原則90日\n\n【RevenueCat, Inc.】\n送信される可能性のある情報：仮名ローカルユーザーID、購入履歴、商品ID、サブスクリプション状態、購入復元に必要な情報、アプリバージョン、端末・OSに関する情報\n利用目的：課金状態の確認、購入復元、有料機能の管理、不正利用防止、課金関連の不具合調査\n\n【Apple Inc.】\n送信される可能性のある情報：購入情報、課金状態、App Store上の利用状況、端末・OSに関する情報\n利用目的：アプリ配布、アプリ内課金、購入復元、ベータテスト\n\n【Apple iCloud】\n送信される可能性のある情報：端末内に保存された本アプリのデータの一部\n利用目的：ユーザーがiCloudバックアップを有効にしている場合のバックアップ・復元\n\n【メールサービス提供者】\n送信される可能性のある情報：メールアドレス、問い合わせ本文、添付ファイル、送信日時等\n利用目的：問い合わせ対応、サポート、不具合調査",
+          "利用状況の計測とクラッシュ診断は、アプリ内の「利用状況の共有」により既定で有効です。ユーザーは設定からいつでも無効にできます。無効化後はPostHogへの新規送信を停止し、Crashlyticsの新規収集を停止します。Crashlyticsの設定反映には次回起動が必要な場合があります。既に送信された情報は各サービスの保存期間に従います。RevenueCatによる課金処理とAppleによるApp Store処理は、この設定の対象外です。",
         ],
       },
       {
@@ -126,6 +127,7 @@ export function privacySections(locale: Locale) {
           "ただし、iOS、App Group共有領域、iCloudバックアップの仕様により、アンインストール後も一部のデータが端末内またはiCloudバックアップ上に残る場合があります。",
           "本アプリにリセット機能が提供されている場合、ユーザーはアプリ内から学習データ、設定、履歴等を削除できます。",
           "問い合わせ情報、課金関連情報など、端末外で処理される情報の削除を希望する場合は、本ポリシー末尾の連絡先までお問い合わせください。ただし、法令、会計、税務、不正利用防止、紛争対応等のために、一定期間保存が必要な場合があります。",
+          "利用状況データは原則1年、Crashlyticsのクラッシュ・診断データは原則90日保持されます。",
         ],
       },
       {
@@ -164,7 +166,7 @@ export function privacySections(locale: Locale) {
       },
       {
         title: "18. 改訂履歴",
-        body: ["2026年6月8日 v1.0 初版作成"],
+        body: ["2026年7月29日 v1.1 利用状況計測、クラッシュ診断、オプトアウトおよび保存期間を追加", "2026年6月8日 v1.0 初版作成"],
       },
       {
         title: "19. お問い合わせ",
@@ -191,6 +193,7 @@ export function privacySections(locale: Locale) {
       body: [
         "The App may store and process the following information on the user’s device in order to provide its features:\n\n- App settings\n- Display language and learning language settings\n- Information about apps, categories, and web domains selected as blocking targets\n- Temporary unlock status\n- Learning cards, user-created cards, and card display settings\n- Review history, review status, and learning progress\n- Unlock session history\n- Learning continuity information such as streaks\n- Information necessary to confirm access to paid features",
         "This information is used for English learning, review scheduling, app blocking, unlock sessions, re-blocking, learning progress display, settings management, and paid feature access.",
+        "The App may use a pseudonymous local user ID generated for each installation for product analytics, crash diagnostics, and purchase-status confirmation. It is not an account ID and is replaced when local data is reset or the App is reinstalled.",
       ],
     },
     {
@@ -251,9 +254,18 @@ export function privacySections(locale: Locale) {
     {
       title: "10. External Transmission and Third-Party Services",
       body: [
-        "The App does not currently use third-party advertising networks, ad tracking SDKs, or analytics SDKs for advertising purposes.",
-        "Information may be sent to the following external services in connection with providing the App:\n\n[Apple Inc.]\nInformation That May Be Sent: Purchase information, purchase status, crash logs, diagnostic information, App Store usage information, device and OS information\nPurpose: App distribution, in-app purchases, purchase restoration, quality improvement, beta testing\n\n[Apple iCloud]\nInformation That May Be Sent: Part of the App data stored on the device\nPurpose: Backup and restoration when the user has enabled iCloud Backup\n\n[RevenueCat, Inc.]\nInformation That May Be Sent: Anonymous user ID, purchase history, product IDs, subscription status, information required for purchase restoration, app version, device and OS information\nPurpose: Purchase status confirmation, purchase restoration, paid feature management, fraud prevention, investigation of purchase-related issues\n\n[Email service provider]\nInformation That May Be Sent: Email address, inquiry content, attachments, sending date and time\nPurpose: User support, inquiry handling, bug investigation",
-        "If we introduce analytics SDKs, cloud sync, advertising services, or other external services in the future, we will update this Privacy Policy and specify the recipient, information transmitted, and purpose of use.",
+        "The App does not use third-party advertising networks, advertising-identifier tracking, or advertising tracking across other companies’ apps or websites.",
+        "Information may be sent to the following external services in connection with providing the App:\n\n[PostHog (EU region)]\nInformation That May Be Sent: Pseudonymous installation-local user ID, explicit usage events, app version, language, feature state, and minimum technical information\nInformation Not Sent: Learning-card or answer content, Screen Time selections or tokens, exact learning performance, exact blocking-target counts, or location\nPurpose: Product analytics and feature improvement\nRetention: Generally one year\n\n[Firebase Crashlytics]\nInformation That May Be Sent: Crash information, limited diagnostic codes, technical information about the App, OS, and device, and the pseudonymous installation-local user ID\nPurpose: Issue investigation and quality improvement\nRetention: Generally 90 days\n\n[Apple Inc.]\nInformation That May Be Sent: Purchase information, purchase status, crash logs, diagnostic information, App Store usage information, device and OS information\nPurpose: App distribution, in-app purchases, purchase restoration, quality improvement, beta testing\n\n[Apple iCloud]\nInformation That May Be Sent: Part of the App data stored on the device\nPurpose: Backup and restoration when the user has enabled iCloud Backup\n\n[RevenueCat, Inc.]\nInformation That May Be Sent: Pseudonymous installation-local user ID, purchase history, product IDs, subscription status, information required for purchase restoration, app version, device and OS information\nPurpose: Purchase status confirmation, purchase restoration, paid feature management, fraud prevention, investigation of purchase-related issues\n\n[Email service provider]\nInformation That May Be Sent: Email address, inquiry content, attachments, sending date and time\nPurpose: User support, inquiry handling, bug investigation",
+        "If we materially change our use of external services, we will update this Privacy Policy to specify the recipient, information transmitted, and purpose of use.",
+      ],
+    },
+    {
+      title: "10.1 Product Analytics and Crash Diagnostics",
+      body: [
+        "The App uses PostHog in the EU region for product analytics. It may receive a pseudonymous installation-local user ID, explicit usage events, app version, language, feature state, and minimum technical information. It does not receive learning-card or answer content, Screen Time selections or tokens, exact learning performance, exact blocking-target counts, or location. PostHog data is generally retained for one year.",
+        "The App uses Firebase Crashlytics for crash diagnostics. It may receive crash information, limited diagnostic codes, technical information about the App, OS, and device, and the pseudonymous local user ID. Crashlytics data is generally retained for 90 days.",
+        "Product analytics and crash diagnostics are enabled by default through the in-app Share Usage Data setting. You can disable them at any time in Settings. After disabling, new PostHog transmission stops and new Crashlytics collection is disabled; the Crashlytics setting may take effect fully on the next launch. Information already transmitted remains subject to the provider’s retention period. This setting does not control RevenueCat purchase processing or Apple App Store processing.",
+        "RevenueCat may receive the pseudonymous local user ID, purchase history, product IDs, subscription status, restoration information, and app, device, or operating-system information to provide purchase confirmation, restoration, paid feature management, fraud prevention, and purchase-related support.",
       ],
     },
     {
@@ -278,6 +290,7 @@ export function privacySections(locale: Locale) {
         "However, due to the specifications of iOS, the App Group shared container, or iCloud Backup, some data may remain on the device or in iCloud Backup even after the App is uninstalled.",
         "If the App provides a reset feature, users can delete learning data, settings, history, and related information from within the App.",
         "If you wish to delete information processed outside the device, such as inquiry information or purchase-related information, please contact us using the contact information at the end of this Policy. However, certain information may need to be retained for legal, accounting, tax, fraud prevention, dispute resolution, or similar purposes.",
+        "Usage data is generally retained for one year and Crashlytics crash and diagnostic data is generally retained for 90 days.",
       ],
     },
     {
@@ -317,7 +330,7 @@ export function privacySections(locale: Locale) {
     },
     {
       title: "18. Revision History",
-      body: ["June 8, 2026 — Version 1.0 created."],
+      body: ["July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, opt-out, and retention information.", "June 8, 2026 — Version 1.0 created."],
     },
     {
       title: "19. Contact",
