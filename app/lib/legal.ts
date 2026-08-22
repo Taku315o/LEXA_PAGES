@@ -3,8 +3,8 @@ import { site, type Locale } from "./content";
 export function privacyIntro(locale: Locale) {
   if (locale === "ja") {
     return {
-      lastUpdated: "最終更新日：2026年7月29日",
-      version: "バージョン：1.1",
+      lastUpdated: "最終更新日：2026年8月22日",
+      version: "バージョン：1.2",
       body: [
         "LEXA（以下「本アプリ」といいます）は、スマートフォンを開く前に英語の復習を行う、iPhone向けの学習・アプリブロック支援アプリです。",
         "本プライバシーポリシー（以下「本ポリシー」といいます）は、本アプリにおけるユーザー情報の取扱いについて説明するものです。",
@@ -13,8 +13,8 @@ export function privacyIntro(locale: Locale) {
   }
 
   return {
-    lastUpdated: "Last updated: July 29, 2026",
-    version: "Version: 1.1",
+    lastUpdated: "Last updated: August 22, 2026",
+    version: "Version: 1.2",
     body: [
       'LEXA ("the App") is an iPhone app that helps users review English before opening selected apps or websites. The App provides learning and app-blocking support features.',
       "This Privacy Policy explains how user information is handled in the App.",
@@ -30,7 +30,7 @@ export function privacySections(locale: Locale) {
         title: "1. 基本方針",
         body: [
           "本アプリは、ユーザーのプライバシーを重視し、機能提供に必要な範囲を超えて情報を取得しません。",
-          "本アプリの学習データ、復習履歴、カード情報、ブロック設定、解除履歴などの主要データは、原則としてユーザーの端末内に保存されます。",
+          "本アプリの学習データ、復習履歴、カード情報、ブロック設定、解除履歴などの主要データは、原則としてユーザーの端末内に保存されます。ただし、ユーザーがSign in with Appleでクラウドバックアップに接続した場合、復元に必要な学習データと設定はクラウドにも保存されます。",
           "本アプリは、ユーザーの個人情報、学習データ、ブロック対象情報を第三者に販売しません。また、広告配信、広告トラッキング、データブローカーへの提供を目的として利用しません。",
         ],
       },
@@ -40,6 +40,14 @@ export function privacySections(locale: Locale) {
           "本アプリは、機能提供のために以下の情報を端末内に保存・処理する場合があります。\n\n・アプリ設定\n・表示言語、学習言語の設定\n・ブロック対象として選択されたアプリ、カテゴリ、Webドメインに関する情報\n・一時解除の状態\n・学習カード、ユーザー作成カード、カードの出題設定\n・復習履歴、復習状態、学習進捗\n・解除セッションの履歴\n・Streakなどの学習継続情報\n・有料機能の利用可否を確認するために必要な課金状態に関する情報",
           "これらの情報は、英語学習、復習スケジュールの管理、アプリブロック、解除セッション、再ブロック、学習進捗の表示、設定管理、有料機能の提供のために利用されます。",
           "本アプリは、端末ごとに生成する仮名のローカルユーザーIDを、利用状況の計測、クラッシュ診断、課金状態の確認で利用する場合があります。このIDはアカウントIDではなく、ローカルデータのリセットまたはアプリの再インストールにより新しいIDになります。",
+        ],
+      },
+      {
+        title: "2.1 クラウドバックアップ",
+        body: [
+          "ユーザーがSign in with Appleでクラウドバックアップに接続した場合、本アプリは端末の交換、再インストール、および同一アカウントでの復元を可能にするため、Appleから提供されるアカウント識別子に基づく認証情報と、復元に必要なアプリデータをSupabaseのサーバーに送信・保存します。",
+          "保存されるデータには、学習プロフィールと設定、復習履歴、カードの復習状態、お気に入り・既知・出題対象などの設定、デッキ・Packの設定と進行状況、完了した解除セッション、ならびにユーザーが作成したデッキおよびカードが含まれます。ユーザー作成カードについては、ユーザーが入力した問題文、回答文、メモ、発音・ローマ字表記その他のカード本文が保存される場合があります。",
+          "ブロック対象として選択したアプリ、カテゴリ、Webドメインの情報およびScreen Timeのトークンはクラウドバックアップに送信しません。クラウドに保存されたデータは、認証された同一ユーザーのバックアップ、同期、復元、およびアカウント削除のために利用され、広告や広告トラッキングには利用されません。",
         ],
       },
       {
@@ -102,6 +110,7 @@ export function privacySections(locale: Locale) {
         body: [
           "本アプリは、第三者広告ネットワーク、広告識別子を用いたトラッキング、または他社アプリやWebサイトをまたぐ広告目的の追跡を行いません。",
           "本アプリの提供に関連して、以下の外部サービスに最小限の情報が送信される場合があります。\n\n【PostHog（EUリージョン）】\n送信される情報：端末ごとの仮名ローカルユーザーID、明示的な利用イベント、アプリバージョン、言語、機能状態などの最小限の技術情報\n送信しない情報：学習カードや回答の内容、Screen Timeの選択内容やトークン、正確な学習成績、正確なブロック対象数、位置情報\n利用目的：利用状況の集計と機能改善\n保存期間：原則1年\n\n【Firebase Crashlytics】\n送信される情報：クラッシュ情報、限定された診断コード、アプリ・OS・端末に関する技術情報、および仮名ローカルユーザーID\n利用目的：不具合の調査と品質改善\n保存期間：原則90日\n\n【RevenueCat, Inc.】\n送信される可能性のある情報：仮名ローカルユーザーID、購入履歴、商品ID、サブスクリプション状態、購入復元に必要な情報、アプリバージョン、端末・OSに関する情報\n利用目的：課金状態の確認、購入復元、有料機能の管理、不正利用防止、課金関連の不具合調査\n\n【Apple Inc.】\n送信される可能性のある情報：購入情報、課金状態、App Store上の利用状況、端末・OSに関する情報\n利用目的：アプリ配布、アプリ内課金、購入復元、ベータテスト\n\n【Apple iCloud】\n送信される可能性のある情報：端末内に保存された本アプリのデータの一部\n利用目的：ユーザーがiCloudバックアップを有効にしている場合のバックアップ・復元\n\n【メールサービス提供者】\n送信される可能性のある情報：メールアドレス、問い合わせ本文、添付ファイル、送信日時等\n利用目的：問い合わせ対応、サポート、不具合調査",
+          "【Supabase】\n送信・保存される可能性のある情報：Appleから提供されるアカウント識別子に基づく認証情報、学習プロフィールと設定、復習履歴、復習状態、デッキ・Packの設定と進行状況、完了した解除セッション、ユーザー作成デッキ、およびユーザーが入力した問題文・回答文・メモ・発音等を含むユーザー作成カード本文\n送信しない情報：Screen Timeの選択内容やトークン\n利用目的：認証、クラウドバックアップ、同期、復元、アカウント削除\n保存先：東京リージョン",
           "利用状況の計測とクラッシュ診断は、アプリ内の「利用状況の共有」により既定で有効です。ユーザーは設定からいつでも無効にできます。無効化後はPostHogへの新規送信を停止し、Crashlyticsの新規収集を停止します。Crashlyticsの設定反映には次回起動が必要な場合があります。既に送信された情報は各サービスの保存期間に従います。RevenueCatによる課金処理とAppleによるApp Store処理は、この設定の対象外です。",
         ],
       },
@@ -128,13 +137,14 @@ export function privacySections(locale: Locale) {
           "本アプリにリセット機能が提供されている場合、ユーザーはアプリ内から学習データ、設定、履歴等を削除できます。",
           "問い合わせ情報、課金関連情報など、端末外で処理される情報の削除を希望する場合は、本ポリシー末尾の連絡先までお問い合わせください。ただし、法令、会計、税務、不正利用防止、紛争対応等のために、一定期間保存が必要な場合があります。",
           "利用状況データは原則1年、Crashlyticsのクラッシュ・診断データは原則90日保持されます。",
+          "クラウドバックアップに保存されたデータは、ユーザーがアプリ内からクラウドアカウントを削除するまで保持されます。クラウドアカウントを削除すると、Supabase上の認証アカウントと、そのアカウントに紐づくクラウドバックアップデータを削除し、Appleに対して認証トークンの失効を要求します。法令上の義務、安全管理、障害復旧用バックアップのローテーション等により、削除の反映に合理的な期間を要する場合があります。端末内およびiCloudバックアップ上のデータは、それぞれの削除方法とAppleの仕様に従います。",
         ],
       },
       {
         title: "14. セキュリティ",
         body: [
           "本アプリは、ユーザー情報の漏えい、紛失、改ざん、不正アクセス等を防ぐため、合理的な安全管理措置を講じます。",
-          "本アプリの主要データは、iOSのアプリ領域または本アプリに関連するExtensionと共有される専用領域に保存されます。",
+          "本アプリの主要データは、iOSのアプリ領域、本アプリに関連するExtensionと共有される専用領域、またはクラウドバックアップに接続した場合はSupabaseのサーバーに保存されます。クラウドデータへのアクセスは認証されたユーザーごとに制限されます。",
           "ただし、いかなる保存方法、通信方法、電子的処理方法も100%安全であることは保証できません。ユーザーは、端末のロック、OSの更新、不審なアプリのインストール防止等、自身の端末管理にも注意してください。",
         ],
       },
@@ -151,7 +161,7 @@ export function privacySections(locale: Locale) {
         title: "16. ユーザーの権利",
         body: [
           "ユーザーは、適用される法令の範囲内で、運営者が保有する個人情報について、開示、訂正、利用停止、削除等を求めることができる場合があります。",
-          "ただし、本アプリの主要な学習データや設定情報は端末内に保存されており、運営者がサーバー上で保持していない場合があります。その場合、運営者は当該端末内データに直接アクセスできません。",
+          "クラウドバックアップに接続していない端末の学習データや設定情報は端末内に保存され、運営者は当該端末内データに直接アクセスできません。クラウドバックアップに接続した場合は、復元に必要なデータがSupabaseに保存されます。",
           "端末内データの削除は、アプリ内の削除・リセット機能、またはアプリのアンインストールにより行ってください。",
           "課金状態に関する情報は、AppleおよびRevenueCatの仕組みにより処理される場合があります。削除や確認を希望する場合は、本ポリシー末尾の連絡先までお問い合わせください。ただし、購入履歴、会計、税務、不正利用防止、紛争対応等のために、一定期間保存が必要な場合があります。",
         ],
@@ -166,7 +176,7 @@ export function privacySections(locale: Locale) {
       },
       {
         title: "18. 改訂履歴",
-        body: ["2026年7月29日 v1.1 利用状況計測、クラッシュ診断、オプトアウトおよび保存期間を追加", "2026年6月8日 v1.0 初版作成"],
+        body: ["2026年8月22日 v1.2 クラウドバックアップ、ユーザー作成カード本文、保存先および削除方法を追加", "2026年7月29日 v1.1 利用状況計測、クラッシュ診断、オプトアウトおよび保存期間を追加", "2026年6月8日 v1.0 初版作成"],
       },
       {
         title: "19. お問い合わせ",
@@ -184,7 +194,7 @@ export function privacySections(locale: Locale) {
       title: "1. Basic Policy",
       body: [
         "The App respects user privacy and does not collect information beyond what is necessary to provide its features.",
-        "Core data such as learning data, review history, card information, blocking settings, and unlock history is generally stored on the user’s device.",
+        "Core data such as learning data, review history, card information, blocking settings, and unlock history is generally stored on the user’s device. However, when a user connects cloud backup with Sign in with Apple, the learning data and settings needed for restoration are also stored in the cloud.",
         "The App does not sell users’ personal information, learning data, or blocking target information to third parties. The App also does not use such information for advertising, ad tracking, or provision to data brokers.",
       ],
     },
@@ -194,6 +204,14 @@ export function privacySections(locale: Locale) {
         "The App may store and process the following information on the user’s device in order to provide its features:\n\n- App settings\n- Display language and learning language settings\n- Information about apps, categories, and web domains selected as blocking targets\n- Temporary unlock status\n- Learning cards, user-created cards, and card display settings\n- Review history, review status, and learning progress\n- Unlock session history\n- Learning continuity information such as streaks\n- Information necessary to confirm access to paid features",
         "This information is used for English learning, review scheduling, app blocking, unlock sessions, re-blocking, learning progress display, settings management, and paid feature access.",
         "The App may use a pseudonymous local user ID generated for each installation for product analytics, crash diagnostics, and purchase-status confirmation. It is not an account ID and is replaced when local data is reset or the App is reinstalled.",
+      ],
+    },
+    {
+      title: "2.1 Cloud Backup",
+      body: [
+        "When a user connects cloud backup with Sign in with Apple, the App sends and stores authentication information based on the account identifier provided by Apple and App data needed for restoration on Supabase servers. This enables device replacement, reinstallation, and restoration with the same account.",
+        "Stored data may include learning profiles and settings, review history, card review state, favorite, known, and study-selection settings, deck and Pack settings and progression, completed unlock sessions, and user-created decks and cards. For user-created cards, this may include user-entered prompt text, answer text, notes, pronunciation, romanization, and other card content.",
+        "The App does not send selected blocking apps, categories, web domains, or Screen Time tokens to cloud backup. Cloud data is used only for authentication, backup, synchronization, restoration, and account deletion for the authenticated user, and not for advertising or advertising tracking.",
       ],
     },
     {
@@ -256,6 +274,7 @@ export function privacySections(locale: Locale) {
       body: [
         "The App does not use third-party advertising networks, advertising-identifier tracking, or advertising tracking across other companies’ apps or websites.",
         "Information may be sent to the following external services in connection with providing the App:\n\n[PostHog (EU region)]\nInformation That May Be Sent: Pseudonymous installation-local user ID, explicit usage events, app version, language, feature state, and minimum technical information\nInformation Not Sent: Learning-card or answer content, Screen Time selections or tokens, exact learning performance, exact blocking-target counts, or location\nPurpose: Product analytics and feature improvement\nRetention: Generally one year\n\n[Firebase Crashlytics]\nInformation That May Be Sent: Crash information, limited diagnostic codes, technical information about the App, OS, and device, and the pseudonymous installation-local user ID\nPurpose: Issue investigation and quality improvement\nRetention: Generally 90 days\n\n[Apple Inc.]\nInformation That May Be Sent: Purchase information, purchase status, crash logs, diagnostic information, App Store usage information, device and OS information\nPurpose: App distribution, in-app purchases, purchase restoration, quality improvement, beta testing\n\n[Apple iCloud]\nInformation That May Be Sent: Part of the App data stored on the device\nPurpose: Backup and restoration when the user has enabled iCloud Backup\n\n[RevenueCat, Inc.]\nInformation That May Be Sent: Pseudonymous installation-local user ID, purchase history, product IDs, subscription status, information required for purchase restoration, app version, device and OS information\nPurpose: Purchase status confirmation, purchase restoration, paid feature management, fraud prevention, investigation of purchase-related issues\n\n[Email service provider]\nInformation That May Be Sent: Email address, inquiry content, attachments, sending date and time\nPurpose: User support, inquiry handling, bug investigation",
+        "[Supabase]\nInformation That May Be Sent and Stored: Authentication information based on the account identifier provided by Apple, learning profiles and settings, review history, review state, deck and Pack settings and progression, completed unlock sessions, user-created decks, and user-created card content including user-entered prompts, answers, notes, and pronunciation information\nInformation Not Sent: Screen Time selections or tokens\nPurpose: Authentication, cloud backup, synchronization, restoration, and account deletion\nStorage Region: Tokyo",
         "If we materially change our use of external services, we will update this Privacy Policy to specify the recipient, information transmitted, and purpose of use.",
       ],
     },
@@ -291,13 +310,14 @@ export function privacySections(locale: Locale) {
         "If the App provides a reset feature, users can delete learning data, settings, history, and related information from within the App.",
         "If you wish to delete information processed outside the device, such as inquiry information or purchase-related information, please contact us using the contact information at the end of this Policy. However, certain information may need to be retained for legal, accounting, tax, fraud prevention, dispute resolution, or similar purposes.",
         "Usage data is generally retained for one year and Crashlytics crash and diagnostic data is generally retained for 90 days.",
+        "Cloud-backup data is retained until the user deletes the cloud account from within the App. Deleting the cloud account deletes the Supabase authentication account and the cloud-backup data associated with it, and requests revocation of the Apple authentication token. Deletion may take a reasonable period to propagate where required for legal obligations, security, or rotation of disaster-recovery backups. Data remaining on the device or in iCloud Backup is governed by the applicable deletion method and Apple’s services.",
       ],
     },
     {
       title: "14. Security",
       body: [
         "The App takes reasonable security measures to prevent leakage, loss, alteration, unauthorized access, and other risks related to user information.",
-        "The App’s core data is stored in the iOS app container or in a dedicated shared area used by the App and its related extensions.",
+        "The App’s core data is stored in the iOS app container, in a dedicated shared area used by the App and its related extensions, or, when cloud backup is connected, on Supabase servers. Access to cloud data is restricted to the authenticated user.",
         "However, no method of storage, communication, or electronic processing can be guaranteed to be 100% secure. Users should also take care to manage their own devices, including using device lock features, keeping the OS updated, and avoiding suspicious apps.",
       ],
     },
@@ -314,7 +334,7 @@ export function privacySections(locale: Locale) {
       title: "16. User Rights",
       body: [
         "Users may have the right, within the scope of applicable law, to request access, correction, suspension of use, deletion, or other handling of personal information held by the Operator.",
-        "However, the App’s core learning data and settings are stored on the user’s device, and the Operator may not hold such data on its servers. In such cases, the Operator cannot directly access the data stored on the device.",
+        "Learning data and settings for a device that is not connected to cloud backup remain on that device, and the Operator cannot directly access that on-device data. When cloud backup is connected, data needed for restoration is stored on Supabase.",
         "Data stored on the device should be deleted through the App’s delete or reset functions, or by uninstalling the App.",
         "Purchase-related information may be processed through Apple and RevenueCat. If you wish to confirm or request deletion of such information, please contact us using the contact information at the end of this Policy. However, some information may need to be retained for a certain period for purchase history, accounting, tax, fraud prevention, dispute resolution, or similar purposes.",
         "Users in the European Economic Area or other regions with applicable data protection laws may also have rights to data portability, restriction of processing, objection to processing, and lodging a complaint with a supervisory authority, where such rights apply.",
@@ -330,7 +350,7 @@ export function privacySections(locale: Locale) {
     },
     {
       title: "18. Revision History",
-      body: ["July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, opt-out, and retention information.", "June 8, 2026 — Version 1.0 created."],
+      body: ["August 22, 2026 — Version 1.2 added cloud backup, user-created card content, storage location, and deletion information.", "July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, opt-out, and retention information.", "June 8, 2026 — Version 1.0 created."],
     },
     {
       title: "19. Contact",
