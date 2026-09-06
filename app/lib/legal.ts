@@ -3,8 +3,8 @@ import { site, type Locale } from "./content";
 export function privacyIntro(locale: Locale) {
   if (locale === "ja") {
     return {
-      lastUpdated: "最終更新日：2026年8月22日",
-      version: "バージョン：1.2",
+      lastUpdated: "最終更新日：2026年9月6日",
+      version: "バージョン：1.3",
       body: [
         "LEXA（以下「本アプリ」といいます）は、スマートフォンを開く前に英語の復習を行う、iPhone向けの学習・アプリブロック支援アプリです。",
         "本プライバシーポリシー（以下「本ポリシー」といいます）は、本アプリにおけるユーザー情報の取扱いについて説明するものです。",
@@ -13,8 +13,8 @@ export function privacyIntro(locale: Locale) {
   }
 
   return {
-    lastUpdated: "Last updated: August 22, 2026",
-    version: "Version: 1.2",
+    lastUpdated: "Last updated: September 6, 2026",
+    version: "Version: 1.3",
     body: [
       'LEXA ("the App") is an iPhone app that helps users review English before opening selected apps or websites. The App provides learning and app-blocking support features.',
       "This Privacy Policy explains how user information is handled in the App.",
@@ -111,7 +111,7 @@ export function privacySections(locale: Locale) {
           "本アプリは、第三者広告ネットワーク、広告識別子を用いたトラッキング、または他社アプリやWebサイトをまたぐ広告目的の追跡を行いません。",
           "本アプリの提供に関連して、以下の外部サービスに最小限の情報が送信される場合があります。\n\n【PostHog（EUリージョン）】\n送信される情報：端末ごとの仮名ローカルユーザーID、明示的な利用イベント、アプリバージョン、言語、機能状態などの最小限の技術情報\n送信しない情報：学習カードや回答の内容、Screen Timeの選択内容やトークン、正確な学習成績、正確なブロック対象数、位置情報\n利用目的：利用状況の集計と機能改善\n保存期間：原則1年\n\n【Firebase Crashlytics】\n送信される情報：クラッシュ情報、限定された診断コード、アプリ・OS・端末に関する技術情報、および仮名ローカルユーザーID\n利用目的：不具合の調査と品質改善\n保存期間：原則90日\n\n【RevenueCat, Inc.】\n送信される可能性のある情報：仮名ローカルユーザーID、購入履歴、商品ID、サブスクリプション状態、購入復元に必要な情報、アプリバージョン、端末・OSに関する情報\n利用目的：課金状態の確認、購入復元、有料機能の管理、不正利用防止、課金関連の不具合調査\n\n【Apple Inc.】\n送信される可能性のある情報：購入情報、課金状態、App Store上の利用状況、端末・OSに関する情報\n利用目的：アプリ配布、アプリ内課金、購入復元、ベータテスト\n\n【Apple iCloud】\n送信される可能性のある情報：端末内に保存された本アプリのデータの一部\n利用目的：ユーザーがiCloudバックアップを有効にしている場合のバックアップ・復元\n\n【メールサービス提供者】\n送信される可能性のある情報：メールアドレス、問い合わせ本文、添付ファイル、送信日時等\n利用目的：問い合わせ対応、サポート、不具合調査",
           "【Supabase】\n送信・保存される可能性のある情報：Appleから提供されるアカウント識別子に基づく認証情報、学習プロフィールと設定、復習履歴、復習状態、デッキ・Packの設定と進行状況、完了した解除セッション、ユーザー作成デッキ、およびユーザーが入力した問題文・回答文・メモ・発音等を含むユーザー作成カード本文\n送信しない情報：Screen Timeの選択内容やトークン\n利用目的：認証、クラウドバックアップ、同期、復元、アカウント削除\n保存先：東京リージョン",
-          "利用状況の計測とクラッシュ診断は、アプリ内の「利用状況の共有」により既定で有効です。ユーザーは設定からいつでも無効にできます。無効化後はPostHogへの新規送信を停止し、Crashlyticsの新規収集を停止します。Crashlyticsの設定反映には次回起動が必要な場合があります。既に送信された情報は各サービスの保存期間に従います。RevenueCatによる課金処理とAppleによるApp Store処理は、この設定の対象外です。",
+          "利用状況の計測とクラッシュ診断は、現在のリリースでは既定で有効です。現在、アプリ内にはこれらをユーザーが停止するための設定はありません。既に送信された情報は各サービスの保存期間に従います。RevenueCatによる課金処理とAppleによるApp Store処理は、利用状況の計測とクラッシュ診断とは別に行われます。",
         ],
       },
       {
@@ -176,7 +176,7 @@ export function privacySections(locale: Locale) {
       },
       {
         title: "18. 改訂履歴",
-        body: ["2026年8月22日 v1.2 クラウドバックアップ、ユーザー作成カード本文、保存先および削除方法を追加", "2026年7月29日 v1.1 利用状況計測、クラッシュ診断、オプトアウトおよび保存期間を追加", "2026年6月8日 v1.0 初版作成"],
+        body: ["2026年9月6日 v1.3 利用状況計測の停止設定に関する記載を実装に合わせて修正し、任意のクラウドバックアップとアカウント削除を明確化", "2026年8月22日 v1.2 クラウドバックアップ、ユーザー作成カード本文、保存先および削除方法を追加", "2026年7月29日 v1.1 利用状況計測、クラッシュ診断、保存期間を追加", "2026年6月8日 v1.0 初版作成"],
       },
       {
         title: "19. お問い合わせ",
@@ -283,7 +283,7 @@ export function privacySections(locale: Locale) {
       body: [
         "The App uses PostHog in the EU region for product analytics. It may receive a pseudonymous installation-local user ID, explicit usage events, app version, language, feature state, and minimum technical information. It does not receive learning-card or answer content, Screen Time selections or tokens, exact learning performance, exact blocking-target counts, or location. PostHog data is generally retained for one year.",
         "The App uses Firebase Crashlytics for crash diagnostics. It may receive crash information, limited diagnostic codes, technical information about the App, OS, and device, and the pseudonymous local user ID. Crashlytics data is generally retained for 90 days.",
-        "Product analytics and crash diagnostics are enabled by default through the in-app Share Usage Data setting. You can disable them at any time in Settings. After disabling, new PostHog transmission stops and new Crashlytics collection is disabled; the Crashlytics setting may take effect fully on the next launch. Information already transmitted remains subject to the provider’s retention period. This setting does not control RevenueCat purchase processing or Apple App Store processing.",
+        "Product analytics and crash diagnostics are enabled by default in the current release. The current release does not provide an in-app setting for users to disable these services. Information already transmitted remains subject to the provider’s retention period. RevenueCat purchase processing and Apple App Store processing are separate from product analytics and crash diagnostics.",
         "RevenueCat may receive the pseudonymous local user ID, purchase history, product IDs, subscription status, restoration information, and app, device, or operating-system information to provide purchase confirmation, restoration, paid feature management, fraud prevention, and purchase-related support.",
       ],
     },
@@ -350,7 +350,7 @@ export function privacySections(locale: Locale) {
     },
     {
       title: "18. Revision History",
-      body: ["August 22, 2026 — Version 1.2 added cloud backup, user-created card content, storage location, and deletion information.", "July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, opt-out, and retention information.", "June 8, 2026 — Version 1.0 created."],
+      body: ["September 6, 2026 — Version 1.3 corrected the description of analytics controls to match the implementation and clarified optional Cloud Backup and cloud-account deletion.", "August 22, 2026 — Version 1.2 added cloud backup, user-created card content, storage location, and deletion information.", "July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, and retention information.", "June 8, 2026 — Version 1.0 created."],
     },
     {
       title: "19. Contact",
@@ -365,8 +365,8 @@ export function privacySections(locale: Locale) {
 export function termsIntro(locale: Locale) {
   if (locale === "ja") {
     return {
-      lastUpdated: "最終更新日：2026年6月8日",
-      version: "バージョン：1.0",
+      lastUpdated: "最終更新日：2026年9月6日",
+      version: "バージョン：1.1",
       body: [
         "本利用規約（以下「本規約」といいます）は、LEXA運営者（以下「運営者」といいます）が提供するiPhone向けアプリ「LEXA」（以下「本アプリ」といいます）の利用条件を定めるものです。",
         "ユーザーは、本アプリをダウンロード、インストール、起動、または利用することにより、本規約に同意したものとみなされます。本規約に同意しない場合、本アプリを利用することはできません。",
@@ -375,8 +375,8 @@ export function termsIntro(locale: Locale) {
   }
 
   return {
-    lastUpdated: "Last updated: June 8, 2026",
-    version: "Version: 1.0",
+    lastUpdated: "Last updated: September 6, 2026",
+    version: "Version: 1.1",
     body: [
       'These Terms of Use ("Terms") set out the conditions for using "LEXA" ("App"), an iPhone application provided by the operator of LEXA ("Operator", "we", "us", or "our").',
       "By downloading, installing, launching, accessing, or using the App, you agree to these Terms. If you do not agree to these Terms, you must not use the App.",
@@ -407,9 +407,9 @@ export function termsSections(locale: Locale) {
       {
         title: "第3条 アカウント",
         body: [
-          "本アプリは、現時点ではアカウント登録機能を提供していません。",
-          "本アプリの主要データは、原則としてユーザーの端末内に保存されます。端末の変更、故障、初期化、アプリ削除、iCloudバックアップの状態等により、データが失われる場合があります。",
-          "将来、本アプリがアカウント機能、クラウド同期、バックアップ機能等を提供する場合、運営者は必要に応じて本規約およびプライバシーポリシーを変更します。",
+          "本アプリは、通常の学習機能をアカウント登録なしで利用できます。ユーザーがSign in with Appleでクラウドバックアップに接続する場合、クラウドバックアップ用のアカウントが作成されます。",
+          "本アプリの主要データは原則として端末内に保存されます。クラウドバックアップを接続した場合、復元に必要な学習データ、設定、ユーザー作成デッキおよびカードが認証されたアカウントに紐づいてSupabaseに保存されます。",
+          "クラウドバックアップは任意であり、設定画面からサインアウトまたはクラウドアカウント削除を行えます。端末内だけに保存されたデータは、端末の変更、故障、初期化、アプリ削除等で失われる場合があります。",
         ],
       },
       {
@@ -435,7 +435,7 @@ export function termsSections(locale: Locale) {
           "ユーザーは、本アプリ内で単語カード、メモ、学習内容等を作成することができます。",
           "ユーザーが作成したコンテンツの内容については、ユーザー自身が責任を負います。",
           "ユーザーは、法令に違反する内容、第三者の権利を侵害する内容、差別・脅迫・嫌がらせ・暴力・違法行為を助長する内容、公序良俗に反する内容、本アプリの運営・保守・セキュリティに支障を及ぼす内容、その他運営者が不適切と判断する内容を作成、保存、利用してはなりません。",
-          "本アプリが現時点でクラウド同期や共有機能を提供していない場合、ユーザー作成コンテンツは原則として端末内に保存されます。ただし、ユーザーが問い合わせ時にスクリーンショットやログ等として任意に送信した場合、その範囲で運営者が確認する場合があります。",
+          "クラウドバックアップを接続している場合、ユーザー作成コンテンツのうち復元に必要なデータは、認証されたユーザーのクラウドアカウントに保存されます。クラウドバックアップを接続していない場合は原則として端末内に保存されます。問い合わせ時にユーザーがスクリーンショット、ログ、本文等を任意に送信した場合、問い合わせ対応に必要な範囲で確認する場合があります。",
         ],
       },
       {
@@ -497,7 +497,7 @@ export function termsSections(locale: Locale) {
         body: [
           "本アプリのデータの取扱いについては、別途定めるプライバシーポリシーに従います。",
           "ユーザーは、端末の故障、紛失、初期化、アプリの削除、OSの不具合、iCloudバックアップの設定等により、本アプリ内のデータが失われる可能性があることを理解するものとします。",
-          "運営者は、本アプリがクラウド同期やバックアップ機能を提供していない限り、端末内データの復元を保証しません。",
+          "クラウドバックアップは任意の機能であり、接続後は復元に必要なデータを認証されたアカウントから復元できます。ただし、端末内だけに保存されたデータについて、運営者は端末の紛失、故障、初期化、アプリ削除等の後の復元を保証しません。",
         ],
       },
       {
@@ -565,10 +565,9 @@ export function termsSections(locale: Locale) {
     {
       title: "3. Account and Local Data",
       body: [
-        "At the time of this version, the App does not provide account registration.",
-        "The App is designed primarily to store core data on your device. This may include learning cards, review history, learning settings, blocking settings, and unlock session information.",
-        "Your data may be lost if your device is changed, damaged, reset, lost, or if the App is deleted, if iCloud backup is disabled or incomplete, or if an operating system or device issue occurs.",
-        "If we introduce accounts, cloud sync, backup, or similar features in the future, we will update these Terms and/or our Privacy Policy as appropriate.",
+        "The App can be used for its ordinary learning features without registering an account. If you connect Cloud Backup with Sign in with Apple, an account for Cloud Backup is created.",
+        "The App primarily stores core data on your device. When Cloud Backup is connected, learning data, settings, user-created decks, and user-created cards needed for restoration are stored in Supabase and associated with the authenticated account.",
+        "Cloud Backup is optional. You can sign out or delete the cloud account from the Cloud Backup settings. Data stored only on your device may be lost if your device is changed, damaged, reset, lost, or if the App is deleted.",
       ],
     },
     {
@@ -595,7 +594,7 @@ export function termsSections(locale: Locale) {
         "You may create learning cards, notes, vocabulary entries, and other learning content within the App.",
         "You are responsible for the content you create, store, or use in the App.",
         "You must not create, store, or use content that:\n- violates applicable law;\n- infringes copyright, trademark rights, privacy rights, publicity rights, reputation rights, or other rights of any third party;\n- contains discriminatory, threatening, harassing, violent, or abusive material;\n- encourages unlawful activity;\n- is obscene, harmful, or contrary to public order or morality;\n- interferes with the operation, maintenance, or security of the App;\n- or is otherwise reasonably considered inappropriate by us.",
-        "At the time of this version, if the App does not provide cloud sync or sharing features, user-created content is generally stored on your device. However, if you voluntarily send screenshots, logs, text, or other information to us for support, we may review such information to the extent necessary to respond to your inquiry.",
+        "When Cloud Backup is connected, user-created content needed for restoration is stored with the authenticated user’s cloud account. Without Cloud Backup, user-created content is generally stored on your device. If you voluntarily send screenshots, logs, text, or other information to us for support, we may review it only as necessary to respond to your inquiry.",
       ],
     },
     {
@@ -655,7 +654,7 @@ export function termsSections(locale: Locale) {
       body: [
         "The handling of personal data and other user information is described in our separate Privacy Policy.",
         "You acknowledge that data stored on your device may be lost due to device failure, loss, reset, App deletion, operating system issues, iCloud backup settings, or similar events.",
-        "Unless the App provides cloud sync or backup features, we do not guarantee restoration of data stored only on your device.",
+        "Cloud Backup is optional and can restore eligible data after you connect Sign in with Apple. Data kept only on your device is not guaranteed to be recoverable after device loss, reset, or App deletion.",
         "For users in the EU/EEA, personal data will be handled in accordance with applicable data protection laws, including the General Data Protection Regulation where applicable. Details are provided in the Privacy Policy.",
       ],
     },
