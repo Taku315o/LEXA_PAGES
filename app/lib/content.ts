@@ -89,14 +89,14 @@ export const content = {
           "毎日の学習達成度を可視化。SNSを開く衝動が、そのまま継続のモチベーションに変わります。",
         ],
         [
-          "アカウント登録不要",
-          "データはすべてあなたの端末内に保存。面倒な登録なしで、今すぐ始められます。",
+          "アカウント登録不要で開始",
+          "通常の学習は登録なしで開始。任意のCloud Backupを使えば、作成したカードや学習データを復元できます。",
         ],
       ],
     },
     privacyBand: {
-      title: "あなたのデータは、スマホの中に",
-      body: "Appleのスクリーンタイム機能は、アプリのブロックにのみ使用します。閲覧履歴の監視は一切行いません。また、学習データもすべて端末内に保存され、外部に送信されることはありません。",
+      title: "データは端末内を基本に管理",
+      body: "Appleのスクリーンタイム機能は、アプリのブロックにのみ使用します。閲覧履歴の監視は一切行いません。学習データは通常端末内に保存され、任意でCloud Backupを有効にした場合のみ復元に必要なデータをクラウドに保存します。",
       cta: "プライバシーポリシーを読む",
     },
     finalCta: {
@@ -184,14 +184,14 @@ export const content = {
           "Visualize your daily achievements. The urge to open apps turns directly into motivation to continue.",
         ],
         [
-          "No account required",
-          "All data is saved on your device. Start immediately with no tedious registration process.",
+          "Start without an account",
+          "Use the ordinary learning features without registration. Optional Cloud Backup can restore your cards and learning data.",
         ],
       ],
     },
     privacyBand: {
-      title: "Your data stays on your phone",
-      body: "Apple's Screen Time feature is used strictly for blocking apps. We never monitor your browsing history. All learning data is stored locally on your device and never sent externally.",
+      title: "Your data is local by default",
+      body: "Apple's Screen Time feature is used strictly for blocking apps. We never monitor your browsing history. Learning data is stored locally by default; optional Cloud Backup stores only data needed for restoration.",
       cta: "Read Privacy Policy",
     },
     finalCta: {
