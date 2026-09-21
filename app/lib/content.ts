@@ -12,7 +12,9 @@ function normalizeDomain(value: string) {
 export const site = {
   domain: normalizeDomain(process.env.NEXT_PUBLIC_SITE_URL || "https://lexa-learn.com"),
   supportEmail: "support@lexa-learn.com",
-  appStoreUrl: process.env.NEXT_PUBLIC_APP_STORE_URL || "#",
+  appStoreUrl:
+    process.env.NEXT_PUBLIC_APP_STORE_URL ||
+    "https://apps.apple.com/app/id6772115459",
 };
 
 export const content = {
