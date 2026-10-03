@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["Z9P8G2Y5YB.com.dateh.LEXA"],
+        "components": [
+          { "/": "/s/*", "comment": "Shared decks by link" },
+          { "/": "/d/*", "comment": "Decks in Everyone's Decks" }
+        ]
+      }
+    ]
+  }
+}
