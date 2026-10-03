@@ -1,4 +1,4 @@
 # Shared-deck links from the LEXA app. Rewrites keep the visible URL, which
 # the page reads to find the token or deck id.
-/s/*  /shared-deck/index.html  200
-/d/*  /shared-deck/index.html  200
+/s/*  /shared-deck/  200
+/d/*  /shared-deck/  200
