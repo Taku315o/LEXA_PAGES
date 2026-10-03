@@ -1,0 +1,12 @@
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
+/shared-deck/*
+  X-Robots-Tag: noindex, nofollow
+
+/s/*
+  X-Robots-Tag: noindex, nofollow
+
+/d/*
+  X-Robots-Tag: noindex, nofollow
