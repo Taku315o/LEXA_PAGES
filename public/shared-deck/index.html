@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Never indexed (search indexing is not part of the first release), and the
+     token or deck id in the path never leaves this page through a referrer.
+     No analytics run here (design §2.3). Serves /s/<token> for link-only decks
+     and /d/<deck id> for decks in Everyone's Decks. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="apple-itunes-app" content="app-id=6772115459">
+<title>LEXA Shared Deck</title>
+<style>
+  :root {
+    --bg: #f6f5f3; --surface: #ffffff; --stroke: #e4e1dc; --text: #17161a;
+    --text-2: #5d5a63; --accent: #d7263d; --on-accent: #ffffff; --code-bg: #efece7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #070709; --surface: #141318; --stroke: #2a2830; --text: #f4f3f6;
+      --text-2: #a9a6b0; --accent: #ff4d63; --on-accent: #ffffff; --code-bg: #1e1d23;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", sans-serif;
+  }
+  main { max-width: 520px; margin: 0 auto; padding: 28px 16px 48px; }
+  .brand { font-weight: 900; letter-spacing: .04em; font-size: 20px; margin-bottom: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--stroke); border-radius: 20px; padding: 20px; margin-bottom: 14px; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; overflow-wrap: anywhere; }
+  .muted { color: var(--text-2); font-size: 14px; margin: 2px 0; }
+  .samples div { padding: 8px 0; border-top: 1px solid var(--stroke); }
+  .samples div:first-child { border-top: 0; }
+  .samples b { display: block; font-size: 16px; }
+  .button {
+    display: block; width: 100%; text-align: center; text-decoration: none; border: 0;
+    border-radius: 999px; padding: 15px 18px; font-weight: 700; font-size: 17px; margin: 10px 0;
+    background: var(--accent); color: var(--on-accent); cursor: pointer;
+  }
+  .button.secondary { background: transparent; color: var(--text); border: 1px solid var(--stroke); }
+  code { display: block; background: var(--code-bg); border-radius: 10px; padding: 10px 12px; font-size: 14px; overflow-wrap: anywhere; }
+  .notice { font-size: 14px; color: var(--text-2); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">LEXA</div>
+
+  <section class="card" id="loading"><p class="muted" data-t="loading"></p></section>
+
+  <section id="deck" hidden>
+    <div class="card">
+      <h1 id="title"></h1>
+      <p class="muted" id="author"></p>
+      <p class="muted" id="languages"></p>
+      <p class="muted" id="count"></p>
+    </div>
+    <div class="card samples" id="samples" hidden></div>
+    <p class="notice" data-t="copy"></p>
+  </section>
+
+  <section class="card" id="unavailable" hidden>
+    <h1 data-t="unavailable"></h1>
+    <p class="muted" data-t="unavailableDetail"></p>
+  </section>
+
+  <a class="button" id="open" href="#" data-t="open"></a>
+  <a class="button secondary" href="https://apps.apple.com/app/id6772115459" data-t="get"></a>
+
+  <div class="card">
+    <p class="muted" data-t="code"></p>
+    <code id="token"></code>
+    <button class="button secondary" id="copy" type="button" data-t="copyCode"></button>
+  </div>
+</main>
+<script>
+(() => {
+  // Public, client-safe values (the same publishable key ships in the app).
+  const SUPABASE_URL = "https://fgmowsvsmngeugrudwdm.supabase.co";
+  const PUBLISHABLE_KEY = "sb_publishable_xE4Iw7EhwAdWczglSuAvNw_ULE_H6HZ";
+
+  const ja = (navigator.language || "ja").toLowerCase().startsWith("ja");
+  const copy = ja ? {
+    loading: "デッキを読み込み中…", open: "LEXA で開く", get: "App Store で LEXA を入手",
+    code: "アプリを入れたあと、みんなのデッキの「…」メニューにある「共有デッキを追加」にこのリンクを貼り付けてください。",
+    copyCode: "リンクをコピー", copied: "コピーしました",
+    copy: "LEXA で追加すると、あなたのライブラリにコピーが保存されます。作成者があとで変更しても、コピーは変わりません。",
+    unavailable: "このリンクは利用できません", unavailableDetail: "作成者が共有を停止したか、リンクが変更された可能性があります。",
+    by: (n) => `作成者：${n}`, cards: (n) => `${n}枚のカード`,
+  } : {
+    loading: "Loading deck…", open: "Open in LEXA", get: "Get LEXA on the App Store",
+    code: "After installing, paste this link into Everyone's Decks › … › Add a shared deck.",
+    copyCode: "Copy link", copied: "Copied",
+    copy: "Adding it in LEXA saves a copy to your library. Later author changes won't modify it.",
+    unavailable: "This link isn't available", unavailableDetail: "The author may have stopped sharing it, or the link may have changed.",
+    by: (n) => `Shared by ${n}`, cards: (n) => `${n} cards`,
+  };
+  document.documentElement.lang = ja ? "ja" : "en";
+  document.querySelectorAll("[data-t]").forEach((el) => { el.textContent = copy[el.dataset.t]; });
+
+  const parts = location.pathname.split("/").filter(Boolean);
+  const token = parts[0] === "s" && /^[A-Za-z0-9_-]{22,64}$/.test(parts[1] || "") ? parts[1] : null;
+  const deckId = parts[0] === "d" && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(parts[1] || "")
+    ? parts[1].toLowerCase() : null;
+  const show = (id, visible) => { document.getElementById(id).hidden = !visible; };
+  const languageName = (code) => {
+    try { return new Intl.DisplayNames([ja ? "ja" : "en"], { type: "language" }).of(code) || code; }
+    catch { return code; }
+  };
+
+  if (!token && !deckId) { show("loading", false); show("unavailable", true); return; }
+  document.getElementById("open").href = token ? `lexa://s/${token}` : `lexa://d/${deckId}`;
+  document.getElementById("token").textContent = location.href;
+  document.getElementById("copy").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(location.href); document.getElementById("copy").textContent = copy.copied; } catch {}
+  });
+
+  fetch(`${SUPABASE_URL}/functions/v1/shared-decks`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", apikey: PUBLISHABLE_KEY },
+    body: JSON.stringify(token ? { action: "resolve", token } : { action: "resolve_public", deck_id: deckId }),
+    referrerPolicy: "no-referrer",
+  }).then(async (response) => {
+    show("loading", false);
+    if (!response.ok) { show("unavailable", true); return; }
+    const deck = await response.json();
+    document.getElementById("title").textContent = deck.title;
+    document.getElementById("author").textContent = copy.by(deck.author.display_name);
+    document.getElementById("languages").textContent =
+      `${languageName(deck.languages.learning)} · ${languageName(deck.languages.native)}`;
+    document.getElementById("count").textContent = copy.cards(deck.card_count);
+    const samples = document.getElementById("samples");
+    (deck.sample_cards || []).forEach((card) => {
+      const row = document.createElement("div");
+      const prompt = document.createElement("b");
+      prompt.textContent = card.prompt;
+      const answer = document.createElement("span");
+      answer.className = "muted";
+      answer.textContent = card.answer;
+      row.append(prompt, answer);
+      samples.append(row);
+    });
+    samples.hidden = samples.childElementCount === 0;
+    show("deck", true);
+  }).catch(() => { show("loading", false); show("unavailable", true); });
+})();
+</script>
+</body>
+</html>
