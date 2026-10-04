@@ -3,8 +3,8 @@ import { site, type Locale } from "./content";
 export function privacyIntro(locale: Locale) {
   if (locale === "ja") {
     return {
-      lastUpdated: "最終更新日：2026年9月6日",
-      version: "バージョン：1.3",
+      lastUpdated: "最終更新日：2026年10月4日",
+      version: "バージョン：1.4",
       body: [
         "LEXA（以下「本アプリ」といいます）は、スマートフォンを開く前に英語の復習を行う、iPhone向けの学習・アプリブロック支援アプリです。",
         "本プライバシーポリシー（以下「本ポリシー」といいます）は、本アプリにおけるユーザー情報の取扱いについて説明するものです。",
@@ -13,8 +13,8 @@ export function privacyIntro(locale: Locale) {
   }
 
   return {
-    lastUpdated: "Last updated: September 6, 2026",
-    version: "Version: 1.3",
+    lastUpdated: "Last updated: October 4, 2026",
+    version: "Version: 1.4",
     body: [
       'LEXA ("the App") is an iPhone app that helps users review English before opening selected apps or websites. The App provides learning and app-blocking support features.',
       "This Privacy Policy explains how user information is handled in the App.",
@@ -48,6 +48,16 @@ export function privacySections(locale: Locale) {
           "ユーザーがSign in with Appleでクラウドバックアップに接続した場合、本アプリは端末の交換、再インストール、および同一アカウントでの復元を可能にするため、Appleから提供されるアカウント識別子に基づく認証情報と、復元に必要なアプリデータをSupabaseのサーバーに送信・保存します。",
           "保存されるデータには、学習プロフィールと設定、復習履歴、カードの復習状態、お気に入り・既知・出題対象などの設定、デッキ・Packの設定と進行状況、完了した解除セッション、ならびにユーザーが作成したデッキおよびカードが含まれます。ユーザー作成カードについては、ユーザーが入力した問題文、回答文、メモ、発音・ローマ字表記その他のカード本文が保存される場合があります。",
           "ブロック対象として選択したアプリ、カテゴリ、Webドメインの情報およびScreen Timeのトークンはクラウドバックアップに送信しません。クラウドに保存されたデータは、認証された同一ユーザーのバックアップ、同期、復元、およびアカウント削除のために利用され、広告や広告トラッキングには利用されません。",
+        ],
+      },
+      {
+        title: "2.2 共有デッキ（みんなのデッキ・リンク共有）",
+        body: [
+          "ユーザーがデッキを公開またはリンクで共有した場合、デッキの名前、説明、カードの内容、ユーザーが選んだ項目（発音、メモ、例文）、および作成者名がSupabaseのサーバーに保存され、本アプリとWebのプレビューで誰でも閲覧できる状態になります。ほかの利用者は、そのデッキのコピーを自分の端末に保存できます。公開を停止したり、アカウントを削除したりしても、すでに保存されたコピーはその利用者の手元に残ります。",
+          "共有デッキを通報した場合、本アプリは通報の理由、任意の自由記述、サインインしている場合はアカウントの識別子、および接続元IPアドレスから作成した元に戻せない識別子（秘密の値を加えたハッシュ）を送信・保存します。これらは通報の確認と不正な通報の防止のために利用します。対応が完了してから180日後に、自由記述、アカウントの識別子、IPアドレス由来の識別子を削除し、通報の記録（対象のデッキ、理由、対応結果、日時）は3年後に削除します。新しい通報があったことを運営者に知らせるため、対象デッキの識別子と通報理由だけを運営者が利用するチャットサービスに送信します。",
+          "運営者が共有デッキを削除した場合、そのデッキの識別子と削除理由を記録します。この記録には個人を特定する情報を含まず、削除したデッキがバックアップからの復元などで再び学習対象になることを防ぐため、期限を設けずに保持します。削除されたデッキのコピーは、各端末で学習対象から外れます。運営者の操作記録は3年後に削除し、記録に付けたメモは1年後に削除します。",
+          "作成者のブロックは端末に保存され、クラウドバックアップを有効にしている場合だけクラウドに保存されます。",
+          "回数制限のため、接続元IPアドレスから作成した元に戻せない識別子を一時的に保存し、2日以内に削除します。",
         ],
       },
       {
@@ -137,6 +147,7 @@ export function privacySections(locale: Locale) {
           "本アプリにリセット機能が提供されている場合、ユーザーはアプリ内から学習データ、設定、履歴等を削除できます。",
           "問い合わせ情報、課金関連情報など、端末外で処理される情報の削除を希望する場合は、本ポリシー末尾の連絡先までお問い合わせください。ただし、法令、会計、税務、不正利用防止、紛争対応等のために、一定期間保存が必要な場合があります。",
           "利用状況データは原則1年、Crashlyticsのクラッシュ・診断データは原則90日保持されます。",
+          "共有デッキ、通報、削除の記録の保存期間は「2.2 共有デッキ」に記載しています。",
           "クラウドバックアップに保存されたデータは、ユーザーがアプリ内からクラウドアカウントを削除するまで保持されます。クラウドアカウントを削除すると、Supabase上の認証アカウントと、そのアカウントに紐づくクラウドバックアップデータを削除し、Appleに対して認証トークンの失効を要求します。法令上の義務、安全管理、障害復旧用バックアップのローテーション等により、削除の反映に合理的な期間を要する場合があります。端末内およびiCloudバックアップ上のデータは、それぞれの削除方法とAppleの仕様に従います。",
         ],
       },
@@ -176,7 +187,7 @@ export function privacySections(locale: Locale) {
       },
       {
         title: "18. 改訂履歴",
-        body: ["2026年9月6日 v1.3 利用状況計測の停止設定に関する記載を実装に合わせて修正し、任意のクラウドバックアップとアカウント削除を明確化", "2026年8月22日 v1.2 クラウドバックアップ、ユーザー作成カード本文、保存先および削除方法を追加", "2026年7月29日 v1.1 利用状況計測、クラッシュ診断、保存期間を追加", "2026年6月8日 v1.0 初版作成"],
+        body: ["2026年10月4日 v1.4 共有デッキ（公開、リンク共有、通報、削除、作成者のブロック）の取扱いと保存期間を追加", "2026年9月6日 v1.3 利用状況計測の停止設定に関する記載を実装に合わせて修正し、任意のクラウドバックアップとアカウント削除を明確化", "2026年8月22日 v1.2 クラウドバックアップ、ユーザー作成カード本文、保存先および削除方法を追加", "2026年7月29日 v1.1 利用状況計測、クラッシュ診断、保存期間を追加", "2026年6月8日 v1.0 初版作成"],
       },
       {
         title: "19. お問い合わせ",
@@ -212,6 +223,16 @@ export function privacySections(locale: Locale) {
         "When a user connects cloud backup with Sign in with Apple, the App sends and stores authentication information based on the account identifier provided by Apple and App data needed for restoration on Supabase servers. This enables device replacement, reinstallation, and restoration with the same account.",
         "Stored data may include learning profiles and settings, review history, card review state, favorite, known, and study-selection settings, deck and Pack settings and progression, completed unlock sessions, and user-created decks and cards. For user-created cards, this may include user-entered prompt text, answer text, notes, pronunciation, romanization, and other card content.",
         "The App does not send selected blocking apps, categories, web domains, or Screen Time tokens to cloud backup. Cloud data is used only for authentication, backup, synchronization, restoration, and account deletion for the authenticated user, and not for advertising or advertising tracking.",
+      ],
+    },
+    {
+      title: "2.2 Shared Decks (Everyone's Decks and Sharing by Link)",
+      body: [
+        "When a user publishes a deck or shares it by link, the deck's title, description, card content, the optional fields the user chose (pronunciation, notes, examples), and the author name are stored on Supabase servers and can be viewed by anyone in the App and in the web preview. Other users can save a copy of the deck on their own devices. Copies already saved stay with those users even if the author stops publishing or deletes the account.",
+        "When a user reports a shared deck, the App sends and stores the reason, optional free text, the account identifier if the user is signed in, and an identifier derived from the network (IP) address that cannot be reversed (a hash with a secret value). These are used to review the report and to prevent abusive reports. 180 days after a report is resolved, the free text, account identifier, and address-derived identifier are deleted; the record of the report (the deck, reason, outcome, and dates) is deleted after three years. To tell the operator about a new report, only the deck identifier and the reason are sent to a chat service the operator uses.",
+        "When the operator removes a shared deck, the deck identifier and the reason are recorded. This record contains no information that identifies a person and is kept without a time limit, so that a removed deck cannot return to study through a restored backup. Copies of a removed deck are taken out of study on each device. Records of operator actions are deleted after three years, and notes attached to them after one year.",
+        "Blocking an author is stored on the device, and in the cloud only when cloud backup is turned on.",
+        "For rate limiting, an identifier derived from the network address that cannot be reversed is stored temporarily and deleted within two days.",
       ],
     },
     {
@@ -310,6 +331,7 @@ export function privacySections(locale: Locale) {
         "If the App provides a reset feature, users can delete learning data, settings, history, and related information from within the App.",
         "If you wish to delete information processed outside the device, such as inquiry information or purchase-related information, please contact us using the contact information at the end of this Policy. However, certain information may need to be retained for legal, accounting, tax, fraud prevention, dispute resolution, or similar purposes.",
         "Usage data is generally retained for one year and Crashlytics crash and diagnostic data is generally retained for 90 days.",
+        "Retention for shared decks, reports, and removal records is described in section 2.2.",
         "Cloud-backup data is retained until the user deletes the cloud account from within the App. Deleting the cloud account deletes the Supabase authentication account and the cloud-backup data associated with it, and requests revocation of the Apple authentication token. Deletion may take a reasonable period to propagate where required for legal obligations, security, or rotation of disaster-recovery backups. Data remaining on the device or in iCloud Backup is governed by the applicable deletion method and Apple’s services.",
       ],
     },
@@ -350,7 +372,7 @@ export function privacySections(locale: Locale) {
     },
     {
       title: "18. Revision History",
-      body: ["September 6, 2026 — Version 1.3 corrected the description of analytics controls to match the implementation and clarified optional Cloud Backup and cloud-account deletion.", "August 22, 2026 — Version 1.2 added cloud backup, user-created card content, storage location, and deletion information.", "July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, and retention information.", "June 8, 2026 — Version 1.0 created."],
+      body: ["October 4, 2026 — Version 1.4 added shared decks (publishing, sharing by link, reports, removal, and blocking authors) and their retention.", "September 6, 2026 — Version 1.3 corrected the description of analytics controls to match the implementation and clarified optional Cloud Backup and cloud-account deletion.", "August 22, 2026 — Version 1.2 added cloud backup, user-created card content, storage location, and deletion information.", "July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, and retention information.", "June 8, 2026 — Version 1.0 created."],
     },
     {
       title: "19. Contact",
@@ -365,8 +387,8 @@ export function privacySections(locale: Locale) {
 export function termsIntro(locale: Locale) {
   if (locale === "ja") {
     return {
-      lastUpdated: "最終更新日：2026年9月6日",
-      version: "バージョン：1.1",
+      lastUpdated: "最終更新日：2026年10月4日",
+      version: "バージョン：1.2",
       body: [
         "本利用規約（以下「本規約」といいます）は、LEXA運営者（以下「運営者」といいます）が提供するiPhone向けアプリ「LEXA」（以下「本アプリ」といいます）の利用条件を定めるものです。",
         "ユーザーは、本アプリをダウンロード、インストール、起動、または利用することにより、本規約に同意したものとみなされます。本規約に同意しない場合、本アプリを利用することはできません。",
@@ -375,8 +397,8 @@ export function termsIntro(locale: Locale) {
   }
 
   return {
-    lastUpdated: "Last updated: September 6, 2026",
-    version: "Version: 1.1",
+    lastUpdated: "Last updated: October 4, 2026",
+    version: "Version: 1.2",
     body: [
       'These Terms of Use ("Terms") set out the conditions for using "LEXA" ("App"), an iPhone application provided by the operator of LEXA ("Operator", "we", "us", or "our").',
       "By downloading, installing, launching, accessing, or using the App, you agree to these Terms. If you do not agree to these Terms, you must not use the App.",
@@ -439,6 +461,18 @@ export function termsSections(locale: Locale) {
         ],
       },
       {
+        title: "第6条の2 共有デッキ",
+        body: [
+          "ユーザーは、自分で作成したデッキを「みんなのデッキ」に公開し、またはリンクで共有することができます。公開・共有には、アプリ内に表示される共有の規約への同意が必要です。",
+          "ユーザーは、共有する権利を持つ内容だけを公開・共有するものとします。第6条に定める内容に加え、リンク、メールアドレス、電話番号、SNSのIDその他の連絡先を含むデッキは公開・共有できません。作成者名はデッキとともに表示されます。",
+          "公開・共有したデッキの権利は、作成したユーザーに帰属します。ユーザーは、デッキを公開・共有することにより、運営者に対し、本アプリおよびWebのプレビューでデッキを保存、表示、配信すること、ならびにモデレーションのために複製することを、無償かつ非独占的に許諾します。",
+          "ユーザーは、デッキを公開・共有することにより、そのデッキのコピーを保存したほかの利用者に対し、本人の学習のためにコピーを保存、編集、バックアップすることを、無償かつ非独占的に許諾します。この許諾は、すでに保存されたコピーについては取り消すことができません。コピーを保存した利用者は、そのコピーを公開または共有し直すことはできません。",
+          "ユーザーがデッキの公開・共有を停止した場合、またはアカウントを削除した場合でも、ほかの利用者がすでに保存したコピーは、その利用者の手元に残ります。",
+          "運営者は、本規約またはコンテンツの基準に反するデッキ、通報を受けて確認したデッキ、その他運営者が不適切と判断したデッキを、事前の通知なく公開停止または削除することがあります。削除されたデッキのコピーは、各端末で学習対象から外れます。悪質な場合、運営者はその作成者による公開・共有を停止することがあります。",
+          "ユーザーは、不適切な共有デッキを本アプリから通報し、作成者をブロックすることができます。運営者は通報を確認し、必要な対応を行います。",
+        ],
+      },
+      {
         title: "第7条 課金・有料機能",
         body: [
           "本アプリは、一部機能を有料で提供する場合があります。",
@@ -464,7 +498,7 @@ export function termsSections(locale: Locale) {
           "本アプリに関する著作権、商標権、その他一切の知的財産権は、運営者または正当な権利者に帰属します。",
           "ユーザーは、本規約に従って本アプリを利用する範囲で、個人的かつ非独占的、譲渡不能、再許諾不能な利用権を付与されます。",
           "本アプリの利用は、ユーザーに対して本アプリまたは関連コンテンツの知的財産権を譲渡するものではありません。",
-          "ユーザーが本アプリ内で作成した単語カード、メモ等のコンテンツに関する権利は、原則としてユーザーに帰属します。ただし、ユーザーは、本アプリの機能提供、保存、表示、バックアップ、サポート対応に必要な範囲で、運営者が当該コンテンツを取り扱うことを許諾するものとします。",
+          "ユーザーが本アプリ内で作成した単語カード、メモ等のコンテンツに関する権利は、原則としてユーザーに帰属します。ただし、ユーザーは、本アプリの機能提供、保存、表示、バックアップ、サポート対応に必要な範囲で、運営者が当該コンテンツを取り扱うことを許諾するものとします。デッキを公開・共有した場合の許諾は、第6条の2に定めます。",
         ],
       },
       {
@@ -598,6 +632,18 @@ export function termsSections(locale: Locale) {
       ],
     },
     {
+      title: "6-2. Shared Decks",
+      body: [
+        "You may publish decks you created in Everyone's Decks or share them by link. Publishing and sharing require you to accept the sharing terms shown in the App.",
+        "You may publish or share only content that you have the right to share. In addition to the content restricted in Section 6, decks that contain links, email addresses, phone numbers, social media IDs, or other contact details cannot be published or shared. Your author name is shown with the deck.",
+        "You keep the rights to the decks you publish or share. By publishing or sharing a deck, you grant us a free, non-exclusive license to store, show, and distribute the deck in the App and in the web preview, and to copy it for moderation.",
+        "By publishing or sharing a deck, you also grant each user who saves a copy a free, non-exclusive license to save, edit, and back up that copy for their own study. This license cannot be withdrawn for copies already saved. Users who save a copy may not publish or share it again.",
+        "If you stop publishing or sharing a deck, or delete your account, copies that other users already saved stay with them.",
+        "We may stop distributing or remove, without prior notice, any deck that breaks these Terms or our content standards, any deck we review after a report, or any deck we consider inappropriate. Copies of a removed deck are taken out of study on each device. In serious cases we may stop an author from publishing or sharing.",
+        "You can report an inappropriate shared deck and block its author from within the App. We review reports and take the action needed.",
+      ],
+    },
+    {
       title: "7. Paid Features and Subscriptions",
       body: [
         "The App may offer certain features as paid features, subscriptions, one-time purchases, or other paid plans.",
@@ -620,7 +666,7 @@ export function termsSections(locale: Locale) {
         "All intellectual property rights in and to the App, including copyrights, trademarks, design rights, software, text, images, UI, logos, and other materials, belong to us or the relevant rights holders.",
         "Subject to your compliance with these Terms, we grant you a personal, limited, non-exclusive, non-transferable, non-sublicensable license to use the App for your own personal use.",
         "These Terms do not transfer any ownership rights in the App or related content to you.",
-        "As between you and us, you generally retain rights to learning cards, notes, and other content that you create in the App. However, you grant us a limited permission to handle such content to the extent necessary to provide App functionality, storage, display, backup where applicable, troubleshooting, and support, subject to our Privacy Policy.",
+        "As between you and us, you generally retain rights to learning cards, notes, and other content that you create in the App. However, you grant us a limited permission to handle such content to the extent necessary to provide App functionality, storage, display, backup where applicable, troubleshooting, and support, subject to our Privacy Policy. Section 6-2 sets out the licenses granted when you publish or share a deck.",
       ],
     },
     {
