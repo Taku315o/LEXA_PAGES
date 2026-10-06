@@ -3,7 +3,7 @@ import { site, type Locale } from "./content";
 export function privacyIntro(locale: Locale) {
   if (locale === "ja") {
     return {
-      lastUpdated: "最終更新日：2026年10月4日",
+      lastUpdated: "最終更新日：2026年10月7日",
       version: "バージョン：1.4",
       body: [
         "LEXA（以下「本アプリ」といいます）は、スマートフォンを開く前に英語の復習を行う、iPhone向けの学習・アプリブロック支援アプリです。",
@@ -13,7 +13,7 @@ export function privacyIntro(locale: Locale) {
   }
 
   return {
-    lastUpdated: "Last updated: October 4, 2026",
+    lastUpdated: "Last updated: October 7, 2026",
     version: "Version: 1.4",
     body: [
       'LEXA ("the App") is an iPhone app that helps users review English before opening selected apps or websites. The App provides learning and app-blocking support features.',
@@ -187,7 +187,7 @@ export function privacySections(locale: Locale) {
       },
       {
         title: "18. 改訂履歴",
-        body: ["2026年10月4日 v1.4 共有デッキ（公開、リンク共有、通報、削除、作成者のブロック）の取扱いと保存期間を追加", "2026年9月6日 v1.3 利用状況計測の停止設定に関する記載を実装に合わせて修正し、任意のクラウドバックアップとアカウント削除を明確化", "2026年8月22日 v1.2 クラウドバックアップ、ユーザー作成カード本文、保存先および削除方法を追加", "2026年7月29日 v1.1 利用状況計測、クラッシュ診断、保存期間を追加", "2026年6月8日 v1.0 初版作成"],
+        body: ["2026年10月7日 v1.4 共有デッキ（公開、リンク共有、通報、削除、作成者のブロック）の取扱いと保存期間を追加", "2026年9月6日 v1.3 利用状況計測の停止設定に関する記載を実装に合わせて修正し、任意のクラウドバックアップとアカウント削除を明確化", "2026年8月22日 v1.2 クラウドバックアップ、ユーザー作成カード本文、保存先および削除方法を追加", "2026年7月29日 v1.1 利用状況計測、クラッシュ診断、保存期間を追加", "2026年6月8日 v1.0 初版作成"],
       },
       {
         title: "19. お問い合わせ",
@@ -372,7 +372,7 @@ export function privacySections(locale: Locale) {
     },
     {
       title: "18. Revision History",
-      body: ["October 4, 2026 — Version 1.4 added shared decks (publishing, sharing by link, reports, removal, and blocking authors) and their retention.", "September 6, 2026 — Version 1.3 corrected the description of analytics controls to match the implementation and clarified optional Cloud Backup and cloud-account deletion.", "August 22, 2026 — Version 1.2 added cloud backup, user-created card content, storage location, and deletion information.", "July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, and retention information.", "June 8, 2026 — Version 1.0 created."],
+      body: ["October 7, 2026 — Version 1.4 added shared decks (publishing, sharing by link, reports, removal, and blocking authors) and their retention.", "September 6, 2026 — Version 1.3 corrected the description of analytics controls to match the implementation and clarified optional Cloud Backup and cloud-account deletion.", "August 22, 2026 — Version 1.2 added cloud backup, user-created card content, storage location, and deletion information.", "July 29, 2026 — Version 1.1 added product analytics, crash diagnostics, and retention information.", "June 8, 2026 — Version 1.0 created."],
     },
     {
       title: "19. Contact",
@@ -387,7 +387,7 @@ export function privacySections(locale: Locale) {
 export function termsIntro(locale: Locale) {
   if (locale === "ja") {
     return {
-      lastUpdated: "最終更新日：2026年10月4日",
+      lastUpdated: "最終更新日：2026年10月7日",
       version: "バージョン：1.2",
       body: [
         "本利用規約（以下「本規約」といいます）は、LEXA運営者（以下「運営者」といいます）が提供するiPhone向けアプリ「LEXA」（以下「本アプリ」といいます）の利用条件を定めるものです。",
@@ -397,7 +397,7 @@ export function termsIntro(locale: Locale) {
   }
 
   return {
-    lastUpdated: "Last updated: October 4, 2026",
+    lastUpdated: "Last updated: October 7, 2026",
     version: "Version: 1.2",
     body: [
       'These Terms of Use ("Terms") set out the conditions for using "LEXA" ("App"), an iPhone application provided by the operator of LEXA ("Operator", "we", "us", or "our").',
