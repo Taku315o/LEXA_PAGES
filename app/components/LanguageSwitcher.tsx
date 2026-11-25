@@ -20,7 +20,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
   return (
     <Link
       href={targetPath(pathname, other)}
-      className="rounded-full border border-lexa-line bg-white/78 px-4 py-2.5 text-sm font-bold text-lexa-ink transition hover:border-lexa-coral dark:border-white/12 dark:bg-white/8 dark:text-white"
+      className="rounded-full border border-lexa-line bg-white/90 px-4 py-2.5 text-sm font-bold text-lexa-ink transition hover:border-lexa-coral dark:border-white/15 dark:bg-white/10 dark:text-white"
       hrefLang={other}
     >
       {other === "ja" ? "日本語" : "English"}
