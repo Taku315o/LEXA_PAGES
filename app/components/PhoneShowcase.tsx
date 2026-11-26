@@ -36,8 +36,8 @@ export function PhoneShowcase({
 }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const userPausedRef = useRef(false);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [userPaused, setUserPaused] = useState(false);
 
   useEffect(() => {
     if (media.kind !== "video") return;
@@ -49,13 +49,12 @@ export function PhoneShowcase({
     if (prefersReducedMotion) {
       video.pause();
       setIsPlaying(false);
-      return;
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting && !userPaused) {
+          if (entry.isIntersecting && !userPausedRef.current && !prefersReducedMotion) {
             video
               .play()
               .then(() => setIsPlaying(true))
@@ -71,7 +70,7 @@ export function PhoneShowcase({
 
     observer.observe(container);
     return () => observer.disconnect();
-  }, [media.kind, userPaused]);
+  }, [media.kind]);
 
   const togglePlayback = () => {
     if (media.kind !== "video") return;
@@ -79,13 +78,13 @@ export function PhoneShowcase({
     if (!video) return;
 
     if (video.paused) {
-      setUserPaused(false);
+      userPausedRef.current = false;
       video
         .play()
         .then(() => setIsPlaying(true))
         .catch(() => setIsPlaying(false));
     } else {
-      setUserPaused(true);
+      userPausedRef.current = true;
       video.pause();
       setIsPlaying(false);
     }
