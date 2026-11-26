@@ -74,7 +74,7 @@ export function ThemeToggle({ labels }: { labels: { light: string; dark: string 
         className={`rounded-full px-3 py-1.5 transition-all duration-200 ${
           theme === "light"
             ? "bg-lexa-ink text-white dark:bg-[#2b2023] dark:text-white"
-            : "text-lexa-muted hover:text-white dark:text-white/58 dark:hover:text-white"
+            : "text-lexa-muted hover:text-lexa-ink dark:text-white/60 dark:hover:text-white"
         }`}
       >
         {labels.light}
@@ -83,7 +83,7 @@ export function ThemeToggle({ labels }: { labels: { light: string; dark: string 
         className={`rounded-full px-3 py-1.5 transition-all duration-200 ${
           theme === "dark"
             ? "bg-white text-lexa-ink shadow-[0_1px_0_rgba(255,255,255,0.08),0_8px_20px_rgba(0,0,0,0.22)] dark:bg-[#f7f1ef] dark:text-[#171214]"
-            : "text-lexa-muted hover:text-lexa-ink dark:text-white/58 dark:hover:text-white"
+            : "text-lexa-muted hover:text-lexa-ink dark:text-white/60 dark:hover:text-white"
         }`}
       >
         {labels.dark}
