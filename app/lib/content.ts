@@ -174,6 +174,55 @@ const sharedMedia = {
   },
 };
 
+const jaMedia: Record<MediaKey, PhoneMedia> = {
+  hero: {
+    kind: "video",
+    mp4: "/media/ja-feed-scroll.mp4",
+    webm: "/media/ja-feed-scroll.webm",
+    poster: "/media/ja-feed-scroll-poster.jpg",
+    alt: "英語動画フィードと発話同期の日英二言語字幕・単語ハイライト",
+    aspectRatio: "1206 / 2622",
+  },
+  step1: {
+    kind: "image",
+    src: "/media/ja-feed-still.jpg",
+    alt: "発話中の単語を赤くハイライトする日英二言語字幕プレーヤー",
+    width: 780,
+    height: 1696,
+  },
+  step2: {
+    kind: "video",
+    mp4: "/media/ja-tap-save.mp4",
+    webm: "/media/ja-tap-save.webm",
+    poster: "/media/ja-tap-save-poster.jpg",
+    alt: "字幕の英単語をタップして意味を確認し、1タップで保存する操作デモ",
+    aspectRatio: "1206 / 2622",
+  },
+  step3: {
+    kind: "video",
+    mp4: "/media/ja-scene-review.mp4",
+    webm: "/media/ja-scene-review.webm",
+    poster: "/media/ja-scene-review-poster.jpg",
+    alt: "保存した英単語に出会った動画シーンを再生しながら復習する画面",
+    aspectRatio: "1206 / 2622",
+  },
+  step3Context: {
+    kind: "image",
+    src: "/media/ja-saved-context-still.jpg",
+    alt: "保存した単語と元の動画シーンへのリンクが表示されたカード",
+    width: 640,
+    height: 1392,
+  },
+  blocker: {
+    kind: "video",
+    mp4: "/media/tiktok-unlock.mp4",
+    webm: "/media/tiktok-unlock.webm",
+    poster: "/media/tiktok-unlock-poster.jpg",
+    alt: "TikTokスクロール中にLEXAシールドが起動し、動画クイズ5問でロック解除する流れ",
+    aspectRatio: "1170 / 2532",
+  },
+};
+
 export const content: Record<Locale, LocaleContent> = {
   ja: {
     meta: {
@@ -378,7 +427,7 @@ export const content: Record<Locale, LocaleContent> = {
       supportTitle: "問い合わせ・サポート",
       updated: "最終更新日: 2026年10月7日",
     },
-    media: sharedMedia,
+    media: jaMedia,
   },
   en: {
     meta: {
